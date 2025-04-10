@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap');
+
+body {
+    background: linear-gradient(135deg, #2c1e1e, #5a3826);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 85vw; */
+    min-height: 120vh;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: lighter;
+    font-style: oblique;
+    color: wheat;
+    text-shadow: 2px 2px 4px black;
+}
+
+p {
+    color: burlywood;
+    font-size: 18px;
+    font-family: 'EB Garamond', serif;
+}
+
+a {
+    text-decoration: none;
+    color: burlywood;
+    text-shadow: 3px 3px 6px rgb(212, 150, 68);
+    font-size: 18px;
+    transition: font-size 1s;
+}
+
+a:hover {
+    font-size: 20px;
+    transition: font-size 1s;
+}
+
+.origen {
+    padding-top: 100px;
+}
+
+.castillo {
+    height: 525px;
+    width: 718px;
+}

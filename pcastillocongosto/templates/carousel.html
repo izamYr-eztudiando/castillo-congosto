@@ -1,0 +1,28 @@
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+{% endblock %}
+{% block content %}
+<div class="carousel">
+    <div class="atras">
+        <img id="atras" src="{% static 'images/boton-atras.png' %}" loading="lazy">
+    </div>
+    <div class="imagenes">
+        <div id="img">
+            <!-- <img src="https://www.wondercide.com/cdn/shop/articles/Upside_down_gray_cat.png?v=1685551065&width=1100" alt="imagen" class="img" loading="lazy"> -->
+             <img src="{% static 'images/castillo-interno-dia.jpg' %}" alt="imagen" class="img" loading="lazy">
+        </div>
+        <div id="texto" class="texto">
+            <h3>Gatito boca abajo</h3>
+            <p>Es un gatito cansado</p>
+        </div>
+    </div>
+    <div class="adelante" id="adelante">
+        <img id="adelante" src="{% static 'images/boton-adelante.png' %}" alt="adelante" loading="lazy">
+    </div>
+</div>
+
+<div class="puntos" id="puntos"></div>
+
+<script src="{% static 'js/carousel.js' %}"></script>
+{% endblock %}

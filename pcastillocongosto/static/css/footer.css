@@ -1,0 +1,105 @@
+footer {
+    background: #5a3826; /* Color oscuro elegante */
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Contenedor para centrar contenido */
+.footer-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* flex-direction: row; */
+}
+
+/* Logo del footer */
+.footer-logo img {
+    height: 48px;
+    width: 48px;
+}
+
+.political-links {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    padding-inline: 10px;
+}
+
+.political-link {
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+}
+
+/* Contenedor de los iconos sociales */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Estilo de cada icono social */
+.social-icon img {
+    transition: 0.3s;
+    cursor: pointer;
+    transform: height 2s, width 2s;
+}
+
+/* Efecto al pasar el ratón sobre los iconos */
+.social-icon img:hover {
+    transform: scale(1.1);
+    height: 50px;
+    width: 50px;
+    transform: height 2s, width 2s;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* footer {
+    background-color: aqua;
+    height: 50px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: 0px 10px;
+} */

@@ -1,0 +1,37 @@
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block content %}
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo del footer -->
+        <a href="/" class="footer-logo">
+            <img src="{% static 'images/logo.png' %}" height="48" width="48" alt="Logo">
+        </a>
+        <div class="political-links">
+            <ul>
+                <li><a href="" class="political-link">Aviso de privacidad</a></li>
+                <li><a href="" class="political-link">Área legal</a></li>
+                <li><a href="" class="political-link">Cookies</a></li>
+            </ul>
+        </div>
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <a href="#" class="social-icon">
+                <img src="{% static 'images/instagram.png' %}" alt="Instagram" height="30" width="30">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="{% static 'images/facebook.png' %}" alt="Facebook" height="30" width="30">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="{% static 'images/tiktok.png' %}" alt="Tiktok" height="30" width="30">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pinterest.svg/2048px-Pinterest.svg.png" alt="Pinterest" height="30" width="30">
+            </a>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/servicios.css' %}">
+<title>{% block title %}Servicios{% endblock %}</title>
+{% endblock %}
+{% block content %}
+<center>
+    <div class="titulo-pergamino-container">
+        <img src="{% static 'images/titulo-pergamino2.png' %}" alt="Servicios" class="titulo-pergamino">
+        <div class="texto-titulo-pergamino">
+            <h2>Servicios</h2>
+        </div>
+    </div>
+    <div class="pergamino-container">
+        <img src="{% static 'images/pergamino.png' %}" alt="Servicios disponibles" class="pergamino">
+        <div class="texto-pergamino">
+            <h3>Servicios disponibles</h3>
+            <div class="servicios">
+                <ul class="lista-servicios">
+                    <li class="servicio"><a href="#" data-img="{% static 'images/mesa.jpg' %}">Catering</a></li>
+                    <li class="servicio"><a href="#" data-img="{% static 'images/cortador-jamon.jpg' %}">Cortador de jamón</a></li>
+                    <li class="servicio"><a>Peluquería</a></li>
+                    <li class="servicio"><a>Maquillaje</a></li>
+                    <li class="servicio"><a>Piloto de dron</a></li>
+                    <li class="servicio"><a>DJ</a></li>
+                    <li class="servicio"><a>Cuidadora de niños</a></li>
+                    <li class="servicio"><a>Servicio de autobuses</a></li>
+                </ul>
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img id="modal-img" class="modal-content" alt="Imagen del servicio">
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+<script src="{% static 'js/servicios.js' %}"></script>
+{% endblock %}

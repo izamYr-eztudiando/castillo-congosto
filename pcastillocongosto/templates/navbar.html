@@ -1,0 +1,43 @@
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+
+{% block content %}
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
+            <img src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" height="48" width="48" alt="Logo">
+        </a>
+
+        <!-- Menú de navegación -->
+        <ul class="navbar-menu">
+            {% if not request.user.is_authenticated %}
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'historia' %}">Historia</a></li>
+                <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                <li><a href="{% url 'dossier' %}">PDF</a></li>
+                <li><a href="{% url 'ubicacion' %}">Ubicación</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            {% endif %}
+        </ul>
+
+        <!-- Botón de Registro o Login -->
+        <div class="navbar-right">
+            {% if request.user.is_authenticated %}
+                <a href="#" class="btn-registro">Registro</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated and "/accounts/login" in request.get_full_path %}
+            <form class="navbar-form" method="POST" action="#">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Usuario" class="input-login">
+                <input type="password" name="password" placeholder="Clave" class="input-login">
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% endblock %}

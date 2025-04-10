@@ -1,0 +1,30 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+  crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+<title>{% block title %}Contacto{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
+<br><br><br><br>
+<div class="texto">
+    <h2>Contacta con nosotros</h2>
+    <p>Contacte con nosotros a través de número o email, o introduzca sus datos en el formulario para que contactemos con usted</p>
+    <p class="contacto-numero">📞 Llámanos: +34 123456789</p>
+    <p class="contacto-email">📧 Email: blabla.bleble@blublu.com</p>
+</div>
+<form class="form">
+    <div class="form_container">
+        <h2 class="form_title">Rellene este formulario</h2>
+        <input type="text" class="form__input" placeholder="Nombre:">
+        <input type="number" class="form__input" placeholder="Número">
+        <input type="email" class="form__input" placeholder="Email:">
+        <textarea class="form__input form__input--message" placeholder="Mensaje"></textarea>
+        <input type="submit" value="Enviar" class="form__cta">
+    </div>
+</form>    
+
+{% endblock %}

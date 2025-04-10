@@ -1,0 +1,15 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/ubicacion.css' %}">
+<title>{% block title %}Ubicacion{% endblock %}</title>
+{% endblock %}
+{% block content%}
+<br><br><br><br>
+<div class="ubicacion">
+    <h3>Estamos situados aquí</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5564.90837977271!2d-5.52821482443737!3d40.491018283656786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3fa76ac4300e37%3A0xb630e4ea80cd3c6e!2sCastillo%20de%20Puente%20del%20Congosto!5e0!3m2!1ses!2sus!4v1744030552036!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br><br><br>
+    <a class="ubicacion-btn" href="https://maps.app.goo.gl/Ns1DqrkiCRBk3uWa7" target="_blank">Enlace directo aquí </a> 
+</div>
+{% endblock %}
