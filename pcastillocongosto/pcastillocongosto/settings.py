@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-otlkl%k#r4etmci97#mc=)!@v!gx5(!j-$sja=ndrink%2#kwq'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,7 +125,7 @@ MEDIA_URL = '/media/'
 #     ('images', os.path.join(STATIC_ROOT, 'images')),
 #     ('img', os.path.join(STATIC_ROOT, 'img')),
 # )
-
+    
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]

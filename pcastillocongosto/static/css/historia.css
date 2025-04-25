@@ -22,6 +22,8 @@ p {
     color: burlywood;
     font-size: 18px;
     font-family: 'EB Garamond', serif;
+    text-align: justify;
+    padding-inline: 0.9%;
 }
 
 a {

@@ -43,7 +43,7 @@ li {
 
 .political-link {
     text-decoration: none;
-    font-style: italic;
+    /* font-style: italic; */
     color: white;
 }
 
@@ -81,7 +81,9 @@ li {
         flex-direction: column;
         gap: 15px;
     }
+
 }
+
 
 /* footer {
     background-color: aqua;
