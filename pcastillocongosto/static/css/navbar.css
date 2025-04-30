@@ -1,7 +1,8 @@
 /* Estilos generales del navbar */
 .navbar {
-    background: #5a3826;
+    /* background: #5a3826; */
     /* padding: 15px 20px; */
+    background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%);
     padding: 10px 0;
     width: 100%;
     position: fixed;
@@ -107,7 +108,7 @@
 }
 
 /* Responsive: Navbar para móviles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
         text-align: center;
@@ -122,4 +123,4 @@
     .navbar-right {
         margin-top: 10px;
     }
-}
+} */

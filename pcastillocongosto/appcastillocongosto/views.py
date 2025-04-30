@@ -32,7 +32,6 @@ def historia(request):
 def servicios(request):
     context = {}
     return render(request, 'servicios.html', context=context)
-
 # def resenas(request):
 #     context = {}
 #     return render(request, 'resenas.html', context=context)

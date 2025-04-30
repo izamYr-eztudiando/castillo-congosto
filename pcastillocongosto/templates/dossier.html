@@ -16,6 +16,8 @@
      <br><br>
      <p id="mensaje-descarga" style="display: none;">¡Gracias por descargar!</p><br>
      <embed src="{% static 'Dossier-Palacio-Carrascalino_Bodas_25.pdf' %}" type="application/pdf" width="476px" height="600px"/>
+     <!-- <iframe src="{% static 'pdfjs/web/viewer.html' %}?file={{ request.build_absolute_uri|slice:':-1'}}{% static 'Dossier-Palacio-Carrascalino_Bodas_25.pdf' %}" width="476px" height="600px"></iframe> -->
+     
 </center>
 <script src="{% static 'js/dossier.js' %}">function mostrarMensaje() {
   const mensaje = document.getElementById('mensaje-descarga');

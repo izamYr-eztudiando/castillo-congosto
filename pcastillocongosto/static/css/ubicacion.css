@@ -1,39 +1,58 @@
-/* body {
-    background: linear-gradient(135deg, #2c1e1e, #5a3826);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    margin: 0;
-} */
-
 body {
-    background: linear-gradient(135deg, #2c1e1e, #5a3826);
+    /* background: linear-gradient(135deg, #2c1e1e, #5a3826); */
+    background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%);
     margin: 0;
     padding: 0;
     min-height: 100vh;
 }
 
 .ubicacion {
-    display: flex;
-    flex-direction: column;
+    display: flex;  
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 8%;
+}
+
+.datos-ubicacion {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 5%;
+    margin-inline-end: 2%;
+    width: 100%;
 }
 
 h3 {
-    color: wheat;
+    text-align: center;
+    color: rgb(85, 42, 2);
     font-style: oblique;
+    font-size: 1.5rem;
+}
+
+p {
+    text-align: center;
+    color: #5a3826;
+    font-size: 1.2rem;
+}
+
+.mapa-ubicacion {
+    margin-inline-end: 5%;
+}
+
+.mapa-ubicacion iframe {
+    width: 100vh;
+    height: 60vh;
 }
 
 .ubicacion-btn {
+    text-align: center;
+    margin-top: 60%;
     background: tomato;
     text-decoration: none;
     font-size: 20px;
     border: none;
     padding: 12px 20px;
-    border-radius: 10px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background 0.3 ease;
     text-decoration: none;

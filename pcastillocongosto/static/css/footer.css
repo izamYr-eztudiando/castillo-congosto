@@ -1,5 +1,6 @@
 footer {
-    background: #5a3826; /* Color oscuro elegante */
+    /* background: #5a3826; Color oscuro elegante */
+    background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%);
     padding: 20px 0;
     text-align: center;
     position: fixed;
