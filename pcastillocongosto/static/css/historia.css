@@ -39,11 +39,15 @@ a:hover {
     transition: font-size 1s;
 }
 
-.origen {
+/* .origen {
     padding-top: 100px;
-}
+} */
 
 .castillo {
     height: 525px;
     width: 718px;
+}
+
+#contenido-principal {
+    padding-top: 140px;
 }

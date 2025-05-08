@@ -16,13 +16,16 @@
     <p class="contacto-numero">📞 Llámanos: +34 123456789</p>
     <p class="contacto-email">📧 Email: blabla.bleble@blublu.com</p>
 </div>
-<form class="form">
-    <div class="form_container">
+<form class="form" method="post">
+    {% csrf_token %}
+        <div class="form_container">
         <h2 class="form_title">Rellene este formulario</h2>
-        <input type="text" class="form__input" placeholder="Nombre:">
-        <input type="number" class="form__input" placeholder="Número">
-        <input type="email" class="form__input" placeholder="Email:">
-        <textarea class="form__input form__input--message" placeholder="Mensaje"></textarea>
+        <input type="text" name="nombre" class="form__input" placeholder="Nombre:" required>
+        <input type="text" name="apellidos" class="form__input" placeholder="Apellidos:">
+        <input type="text" name="lugar" class="form__input" placeholder="Lugar:">
+        <input type="number" name="telefono" class="form__input" placeholder="Número:" required>
+        <input type="email" name="email" class="form__input" placeholder="Email:" required>
+        <textarea class="form__input form__input--message" name="mensaje" placeholder="Mensaje"></textarea>
         <input type="submit" value="Enviar" class="form__cta">
     </div>
 </form>    

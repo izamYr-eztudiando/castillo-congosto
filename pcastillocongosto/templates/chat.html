@@ -1,0 +1,41 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+<title>{% block title %}Chats{% endblock %}</title>
+{% endblock %}
+{% block content %}
+<br><br><br><br>
+<div class="tabla">
+    <table>
+        <thead>
+            <th class="th-chat">ID</th>
+            <th class="th-chat">NOMBRE</th>
+            <th class="th-chat">APELLIDOS</th>
+            <th class="th-chat">EMAIL</th>
+            <th class="th-chat">TELEFONO</th>
+            <th class="th-chat">LUGAR</th>
+            <th class="th-chat">FECHA</th>
+            <th class="th-chat">MENSAJE</th>
+            <th class="th-chat">LEIDO</th>
+            <th class="th-chat">CONTESTADO</th>
+        </thead>
+        <tbody>
+            {% for i in lista_contactos %} 
+                <tr>
+                    <td> {{ i.id }}</td>
+                    <td> {{ i.nombre }}</td>
+                    <td> {{ i.apellidos }}</td>
+                    <td> {{ i.email }}</td>
+                    <td> {{ i.telefono }}</td>
+                    <td> {{ i.lugar }}</td>
+                    <td> {{ i.fecha }}</td>
+                    <td> {{ i.mensaje}}</td>
+                    <td> {{ i.leido}}</td>
+                    <td> {{ i.contestado}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

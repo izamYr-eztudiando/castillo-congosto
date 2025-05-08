@@ -1,0 +1,35 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    border: 2px solid black;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+table {
+    margin: 0;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    border: 0.5px solid black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+td {
+    border: 0.5px solid black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}

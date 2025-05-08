@@ -20,6 +20,7 @@ urlpatterns = [
     path('contacto/', views.contacto, name='contacto'),
     path('historia/', views.historia, name='historia'),
     path('servicios/', views.servicios, name='servicios'),
+    path('chat/', views.chat, name='chat'),
     re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces
     # path('resenas/', views.resenas, name='resenas'),
 ]
