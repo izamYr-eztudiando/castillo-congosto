@@ -51,6 +51,10 @@ def chat(request):
     context = {'lista_contactos': lista_contactos, 'numchats': numchats}
     return render(request, 'chat.html', context=context)
 
+def ver_mensaje(request, id):
+    contacto = Contacto.objects.get(id=id)
+    context = {'contacto': contacto}
+    return render (request, 'ver_mensaje.html', context=context)
 
 # def resenas(request):
 #     context = {}

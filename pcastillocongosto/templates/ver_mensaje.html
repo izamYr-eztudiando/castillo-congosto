@@ -1,0 +1,19 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/mensaje.css' %}">
+<title>{% block title %}Mensaje numero{{contacto.id}}{% endblock %}</title>
+{% endblock %}
+{% block content %}
+<br><br><br><br>
+<div>
+    <div class="datos-personales">
+        <p>{{ contacto.nombre }} {{ contacto.apellidos }} de {{ contacto.lugar }}, mandado el {{ contacto.fecha }}</p>
+        <p>Telefono: {{ contacto.telefono }}</p>
+        <p>Email: {{ contacto.email }}</p>
+    </div>
+    <div class="mensaje">
+        <p>{{ contacto.mensaje }}</p>
+    </div>
+</div>
+{% endblock content %}

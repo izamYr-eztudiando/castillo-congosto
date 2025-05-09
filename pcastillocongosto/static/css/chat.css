@@ -14,6 +14,10 @@ body {
     align-items: center; */
 }
 
+.boton-accion {
+    text-decoration: none;
+}
+
 table {
     margin: 0;
     border: 1px solid black;

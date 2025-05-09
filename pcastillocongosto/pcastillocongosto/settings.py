@@ -34,6 +34,7 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://hb-wonderful-intent-services.trycloudflare.com',
+    'https://levels-trainer-knights-white.trycloudflare.com',
 ]
 
 ROOT_URLCONF = 'pcastillocongosto.urls'

@@ -16,9 +16,9 @@
             <th class="th-chat">TELEFONO</th>
             <th class="th-chat">LUGAR</th>
             <th class="th-chat">FECHA</th>
-            <th class="th-chat">MENSAJE</th>
             <th class="th-chat">LEIDO</th>
             <th class="th-chat">CONTESTADO</th>
+            <th class="th-chat">ACCIONES</th>
         </thead>
         <tbody>
             {% for i in lista_contactos %} 
@@ -30,9 +30,9 @@
                     <td> {{ i.telefono }}</td>
                     <td> {{ i.lugar }}</td>
                     <td> {{ i.fecha }}</td>
-                    <td> {{ i.mensaje}}</td>
-                    <td> {{ i.leido}}</td>
-                    <td> {{ i.contestado}}</td>
+                    <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
+                    <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
+                    <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>
                 </tr>
             {% endfor %}
         </tbody>
