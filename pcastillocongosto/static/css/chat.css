@@ -18,6 +18,29 @@ body {
     text-decoration: none;
 }
 
+.num-mensajes {
+    display: flex;
+    justify-content: center;
+}
+
+.num-mensajes-text {
+    font-size: 20px;
+}
+
+.btn-actualizar {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-actualizar-text {
+    background: yellowgreen;
+    border-radius: 20px;
+    border: 2px solid grey;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 table {
     margin: 0;
     border: 1px solid black;

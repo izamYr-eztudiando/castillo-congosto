@@ -6,36 +6,47 @@
 {% endblock %}
 {% block content %}
 <br><br><br><br>
-<div class="tabla">
-    <table>
-        <thead>
-            <th class="th-chat">ID</th>
-            <th class="th-chat">NOMBRE</th>
-            <th class="th-chat">APELLIDOS</th>
-            <th class="th-chat">EMAIL</th>
-            <th class="th-chat">TELEFONO</th>
-            <th class="th-chat">LUGAR</th>
-            <th class="th-chat">FECHA</th>
-            <th class="th-chat">LEIDO</th>
-            <th class="th-chat">CONTESTADO</th>
-            <th class="th-chat">ACCIONES</th>
-        </thead>
-        <tbody>
-            {% for i in lista_contactos %} 
-                <tr>
-                    <td> {{ i.id }}</td>
-                    <td> {{ i.nombre }}</td>
-                    <td> {{ i.apellidos }}</td>
-                    <td> {{ i.email }}</td>
-                    <td> {{ i.telefono }}</td>
-                    <td> {{ i.lugar }}</td>
-                    <td> {{ i.fecha }}</td>
-                    <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
-                    <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
-                    <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div>
+    <div class="num-mensajes">
+        <p class="num-mensajes-text">Mensajes no leídos: {{ numchats }}</p>
+    </div>
+    <div class="tabla">
+        <table>
+            <thead>
+                <th class="th-chat">ID</th>
+                <th class="th-chat">NOMBRE</th>
+                <th class="th-chat">APELLIDOS</th>
+                <th class="th-chat">EMAIL</th>
+                <th class="th-chat">TELEFONO</th>
+                <th class="th-chat">LUGAR</th>
+                <th class="th-chat">FECHA</th>
+                <th class="th-chat">LEIDO</th>
+                <th class="th-chat">CONTESTADO</th>
+                <th class="th-chat">ACCIONES</th>
+            </thead>
+            <tbody>
+                {% for i in lista_contactos %} 
+                    <tr>
+                        <td> {{ i.id }}</td>
+                        <td> {{ i.nombre }}</td>
+                        <td> {{ i.apellidos }}</td>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.telefono }}</td>
+                        <td> {{ i.lugar }}</td>
+                        <td> {{ i.fecha }}</td>
+                        <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
+                        <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
+                        <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-actualizar">
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Actualizar" class="btn-actualizar-text">
+        </form>
+    </div>
 </div>
 {% endblock content %}

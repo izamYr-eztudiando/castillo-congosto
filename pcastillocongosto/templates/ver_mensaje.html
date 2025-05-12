@@ -2,11 +2,11 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/mensaje.css' %}">
-<title>{% block title %}Mensaje numero{{contacto.id}}{% endblock %}</title>
+<title>{% block title %}Mensaje numero {{contacto.id}}{% endblock %}</title>
 {% endblock %}
 {% block content %}
 <br><br><br><br>
-<div>
+<div class="contenido">
     <div class="datos-personales">
         <p>{{ contacto.nombre }} {{ contacto.apellidos }} de {{ contacto.lugar }}, mandado el {{ contacto.fecha }}</p>
         <p>Telefono: {{ contacto.telefono }}</p>
@@ -14,6 +14,12 @@
     </div>
     <div class="mensaje">
         <p>{{ contacto.mensaje }}</p>
+    </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+                <input type="submit" value="Atras" class="boton-atras">
+        </form>       
     </div>
 </div>
 {% endblock content %}

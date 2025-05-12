@@ -29,7 +29,7 @@ def contacto(request):
         lugar = request.POST.get('lugar')
         telefono = request.POST.get('telefono')
         email = request.POST.get('email')
-        mensaje = request.POST.get('email')
+        mensaje = request.POST.get('mensaje')
         contacto = Contacto(nombre=nombre, apellidos=apellidos, lugar=lugar, telefono=telefono, email=email, mensaje=mensaje)
         contacto.save()
         return redirect('chat')
@@ -44,15 +44,19 @@ def servicios(request):
     return render(request, 'servicios.html', context=context)
 
 def chat(request):
-    lista_contactos = Contacto.objects.all().order_by('id')
-    numchats = 0
-    for r in lista_contactos:
-        numchats = numchats + 1
+    lista_contactos = Contacto.objects.all().order_by('leido')
+    numchats = Contacto.objects.filter(leido=False).count()
+    if request.method == 'POST':
+        return redirect('chat')
     context = {'lista_contactos': lista_contactos, 'numchats': numchats}
     return render(request, 'chat.html', context=context)
 
 def ver_mensaje(request, id):
     contacto = Contacto.objects.get(id=id)
+    if request.method == 'POST':
+        contacto.leido = True
+        contacto.save()
+        return redirect('chat')
     context = {'contacto': contacto}
     return render (request, 'ver_mensaje.html', context=context)
 
