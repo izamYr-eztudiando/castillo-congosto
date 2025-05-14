@@ -7,10 +7,12 @@
 <nav class="navbar">
     <div class="navbar-container">
         <!-- Logo -->
-        <a href="/" class="navbar-logo">
-            <img id="logo-expandible" src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" height="48" width="48" alt="Logo">
-        </a>
-
+        <!-- <a href="/" class="navbar-logo">
+            <img id="logo-expandible" data-img="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" height="48" width="48" alt="Logo">
+        </a> -->
+        <div class="navbar-logo" style="cursor: pointer;">
+            <img data-img="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" alt="Logotipo del Castillo" id="logo-expandible" height="48" width="48">
+        </div>
         <!-- Menú de navegación -->
         <ul class="navbar-menu">
             {% if not request.user.is_authenticated %}
@@ -40,4 +42,9 @@
         </div>
     </div>
 </nav>
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modal-img" class="modal-content" alt="Logo ampliado">
+</div>
+<script src="{% static 'js/navbar.js' %}"></script>
 {% endblock %}

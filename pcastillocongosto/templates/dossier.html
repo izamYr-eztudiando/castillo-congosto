@@ -14,7 +14,7 @@
     <!-- <button type="submit">Descargar Dossier</button> -->
      <a class="dossier-btn" href="{% static 'Dossier-Palacio-Carrascalino_Bodas_25.pdf' %}" download="Dossier" onclick="mostrarMensaje()">Descargar Dossier</a>
      <br><br>
-     <p id="mensaje-descarga" style="display: none;">¡Gracias por descargar!</p><br>
+     <p id="mensaje-descarga" style="display: none;" class="mensaje-descarga">¡Gracias por descargar!</p><br>
      <embed src="{% static 'Dossier-Palacio-Carrascalino_Bodas_25.pdf' %}" type="application/pdf" width="476px" height="600px"/>
      <!-- <iframe src="{% static 'pdfjs/web/viewer.html' %}?file={{ request.build_absolute_uri|slice:':-1'}}{% static 'Dossier-Palacio-Carrascalino_Bodas_25.pdf' %}" width="476px" height="600px"></iframe> -->
      

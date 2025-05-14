@@ -8,7 +8,13 @@
 <br><br><br><br>
 <div>
     <div class="num-mensajes">
-        <p class="num-mensajes-text">Mensajes no leídos: {{ numchats }}</p>
+        <div class="num-mensajes1">
+            <p class="num-mensajes-text">Mensajes totales recibidos: {{ numcontactos }}</p>
+        </div>
+        <div class="num-mensajes2">
+            <p class="num-mensajes-text">Mensajes no leídos: {{ numleidos }}</p>
+            <p class="num-mensajes-text">Mensajes no contestados: {{ numcontestados }}</p>
+        </div>
     </div>
     <div class="tabla">
         <table>
@@ -31,9 +37,10 @@
                         <td> {{ i.nombre }}</td>
                         <td> {{ i.apellidos }}</td>
                         <td> {{ i.email }}</td>
-                        <td> {{ i.telefono }}</td>
+                        <!-- <td><form method="get"><a href="https://wa.me/34{{ i.telefono }}" target="_blank"><a href="{% url 'ver_contacto' id=i.id %}">{{ i.telefono }}</a></a></form></td> -->
+                        <td> <a href="{% url 'ver_contacto' id=i.id %}" target="_blank" class="telefono">{{ i.telefono }}</a></td>
                         <td> {{ i.lugar }}</td>
-                        <td> {{ i.fecha }}</td>
+                        <td> {{ i.fecha|date:"d/m/Y" }}</td>
                         <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
                         <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
                         <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>

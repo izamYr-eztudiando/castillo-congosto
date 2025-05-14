@@ -20,11 +20,27 @@ body {
 
 .num-mensajes {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid lawngreen;
+}
+
+.num-mensajes2 {
+    border: 4px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .num-mensajes-text {
     font-size: 20px;
+}
+
+.telefono {
+    text-decoration: none;
+    color: rgba(8, 49, 233, 0.801);
+    font-weight: bold;
 }
 
 .btn-actualizar {

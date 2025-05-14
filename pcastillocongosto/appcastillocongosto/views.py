@@ -45,11 +45,20 @@ def servicios(request):
 
 def chat(request):
     lista_contactos = Contacto.objects.all().order_by('leido')
-    numchats = Contacto.objects.filter(leido=False).count()
+    numcontactos = Contacto.objects.count()
+    numleidos = Contacto.objects.filter(leido=False).count()
+    numcontestados = Contacto.objects.filter(contestado=False).count()
     if request.method == 'POST':
         return redirect('chat')
-    context = {'lista_contactos': lista_contactos, 'numchats': numchats}
+    context = {'lista_contactos': lista_contactos, 'numleidos': numleidos, 'numcontestados': numcontestados, 'numcontactos': numcontactos}
     return render(request, 'chat.html', context=context)
+
+def ver_contacto(request, id):
+    contacto = get_object_or_404(Contacto, id=id)
+    contacto.contestado = True
+    contacto.save()
+    numero = contacto.telefono
+    return redirect(f"https://wa.me/34{numero}")
 
 def ver_mensaje(request, id):
     contacto = Contacto.objects.get(id=id)

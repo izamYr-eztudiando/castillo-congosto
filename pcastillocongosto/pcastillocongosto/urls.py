@@ -22,6 +22,7 @@ urlpatterns = [
     path('servicios/', views.servicios, name='servicios'),
     path('chat/', views.chat, name='chat'),
     re_path(r'^(?P<id>\d+)/ver_mensaje$', views.ver_mensaje, name='ver_mensaje'),
+    re_path(r'^(?P<id>\d+)/ver_contacto$', views.ver_contacto, name='ver_contacto'),
     re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces
     # path('resenas/', views.resenas, name='resenas'),
 ]

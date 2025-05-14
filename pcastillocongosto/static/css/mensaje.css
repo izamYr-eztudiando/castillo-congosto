@@ -18,6 +18,8 @@ body {
 .datos-personales {
     border: 2px solid blue;
     font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .mensaje {
@@ -30,7 +32,7 @@ body {
     /* Estilo para el mensaje */
     background: #fdfaf6;
     border: 3px solid #a1887f;
-    border-radius: 12px;
+    border-radius: 100px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     padding: 40px;
     margin: 20px;

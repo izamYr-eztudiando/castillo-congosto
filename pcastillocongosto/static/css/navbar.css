@@ -29,11 +29,11 @@
     transition: height 2s, width 2s;    
 }
 
-.navbar-logo img:hover {
+/* .navbar-logo img:hover {
     height: 128px;
     width: 128px;
     transition: height 2s, width 2s;
-}
+} */
 
 /* Menú de navegación */
 .navbar-menu {
@@ -105,6 +105,43 @@
 
 .btn-login:hover {
     background: #1d6db4;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px black;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.close:hover {
+    color: #990f0f;
 }
 
 /* Responsive: Navbar para móviles */
