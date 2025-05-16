@@ -2,15 +2,16 @@
 
 body {
     background: linear-gradient(135deg, #2c1e1e, #5a3826);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     /* flex-direction: column; */
     /* min-height: 85vw; */
     /* min-height: 120vh; */
-    height: 100%;
-    min-height: 100%;
+    height:auto;
+    min-height: 100vh;
     margin: 0;
+    border: 3px solid blue;
 }
 
 h2 {
@@ -49,8 +50,14 @@ a:hover {
 .castillo {
     height: 525px;
     width: 718px;
+    border-radius: 12px;
 }
 
-#contenido-principal {
-    padding-top: 140px;
+.contenido-principal {
+    padding-top: 8%;
+    border: 2px solid white;
+    height: 100%;
+    min-height: 100%;
+    align-content: center;
+    text-align: center;
 }
