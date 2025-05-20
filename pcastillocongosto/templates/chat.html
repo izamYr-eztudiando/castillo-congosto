@@ -36,9 +36,10 @@
                         <td> {{ i.id }}</td>
                         <td> {{ i.nombre }}</td>
                         <td> {{ i.apellidos }}</td>
-                        <td> {{ i.email }}</td>
+                        <!-- <td> <a href="mailto:{{ i.email }}">{{ i.email }}</a></td> -->
+                        <td><a href="https://mail.google.com/mail/?view=cm&to={{ i.email }}" target="_blank" class="email">{{ i.email }}</a></td>
                         <!-- <td><form method="get"><a href="https://wa.me/34{{ i.telefono }}" target="_blank"><a href="{% url 'ver_contacto' id=i.id %}">{{ i.telefono }}</a></a></form></td> -->
-                        <td> <a href="{% url 'ver_contacto' id=i.id %}" target="_blank" class="telefono">{{ i.telefono }}</a></td>
+                        <td> <a href="{% url 'ver_contacto' id=i.id %}" target="_blank" class="telefono">+34 {{ i.telefono }}</a></td>
                         <td> {{ i.lugar }}</td>
                         <td> {{ i.fecha|date:"d/m/Y" }}</td>
                         <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>

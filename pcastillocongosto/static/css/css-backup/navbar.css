@@ -1,6 +1,6 @@
-/* BARRA DE NAVEGACIÓN */
 /* Estilos generales del navbar */
 .navbar {
+    /* padding: 15px 20px; */
     /* background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%); */
     background: #a5b5d8;
     padding: 10px 0;
@@ -19,7 +19,7 @@
     max-width: 1200px;
     margin: 0 auto;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 /* Logo */
@@ -28,6 +28,12 @@
     width: 58px;
     transition: height 2s, width 2s;    
 }
+
+/* .navbar-logo img:hover {
+    height: 128px;
+    width: 128px;
+    transition: height 2s, width 2s;
+} */
 
 /* Menú de navegación */
 .navbar-menu {
@@ -56,49 +62,49 @@
     border-radius: 5px;
 }
 
-.toggle_btn {
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
+/* Botón de registro */
+.btn-registro {
+    color: #686868;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid #686868;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* DROPDOWN MENU */
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 100px;
-    height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+.btn-registro:hover {
+    background: #686868;
+    color: white;
 }
 
-.dropdown_menu li {
-    padding: 0.7rem;
+/* Formulario de login */
+.navbar-form {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
 }
 
-.dropdown_menu a {
-    text-decoration: none;
-    color: black;
+.input-login {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Botón de login */
+.btn-login {
+    background: #2E9AFE;
+    color: white;
     font-size: 18px;
-    display: block;
-    text-align: center;
-    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-.dropdown_menu a:hover {
-    background: #7a93b0;
-    border-radius: 10px;
-}
-
-.dropdown_menu.open {
-    height: 250px;
+.btn-login:hover {
+    background: #1d6db4;
 }
 
 /* MODAL */
@@ -138,24 +144,20 @@
     color: #990f0f;
 }
 
-/* RESPONSIVE */
-@media(max-width:860px) {
+/* Responsive: Navbar para móviles */
+/* @media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .navbar-menu {
-        display: none;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
     }
 
-    .toggle_btn {
-        display: block;
+    .navbar-right {
+        margin-top: 10px;
     }
-
-    .dropdown_menu {
-        display: block;
-    }
-}
-
-@media (max-width:500px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
-    }
-}
+} */

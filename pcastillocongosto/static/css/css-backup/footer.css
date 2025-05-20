@@ -16,6 +16,8 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
+    /* align-items: center; */
+    /* flex-direction: row; */
 }
 
 /* Logo del footer */
@@ -71,7 +73,7 @@ li {
 }
 
 /* Diseño responsive */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -82,25 +84,26 @@ li {
         gap: 15px;
     }
 
-} */
- @media (max-width: 860px) {
-    .footer-logo {
-        display: none;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    .social-icon img:hover {
-        height: 35px;
-        width: 35px;
-        transform: height 2s, width 2s;
-    }
 }
+
+
+/* footer {
+    background-color: aqua;
+    height: 50px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: 0px 10px;
+} */

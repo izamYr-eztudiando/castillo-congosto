@@ -1,0 +1,142 @@
+div h2 {
+    /* color: rgb(133, 131, 131); */
+    color: #3b2b20;
+    font-size: 40px;
+    font-family: comic sans;
+    font-style: italic;
+}
+
+/* Fondo elegante */
+body {
+    /* background: url('{% static "images/castillo-boda.jpg" %}') no-repeat center center fixed; */
+    /* background: linear-gradient(135deg, #2c1e1e, #5a3826); */
+    background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Ajustes para los párrafos */
+p {
+    /* color: #e0d3c4; Un tono beige claro que contrasta con el fondo oscuro */
+    color: #5a3826;
+    font-size: 18px; /* Tamaño adecuado para buena lectura */
+    line-height: 1.6; /* Espaciado para mayor claridad */
+    text-align: justify; /* Centrado para armonía visual */
+    max-width: 600px; /* No demasiado ancho para mejor lectura */
+    margin: 0 auto 15px auto; /* Centrado con margen inferior */
+}
+
+
+/* Contenedor del formulario */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+/* Caja del formulario */
+.form_container {
+    /* background: rgba(255, 255, 255, 0.95); */
+    background: rgba(250, 240, 230, 0.95); /* Un toque cálido marfil */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título del formulario */
+.form_title {
+    font-size: 28px;
+    color: #5a3826;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.form__input {
+    width: 100%;
+    padding: 12px;
+    /* border: 1px solid #b58e6b; */
+    border: 1px solid #8b5e3c;
+    color: #4b2e1f;
+    border-radius: 5px;
+    background: #fdf6f1;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Garamond', serif;
+}
+
+::placeholder {
+    color: #a67c52;
+}
+
+/* Ajuste específico para el área de mensaje */
+.form__input--message {
+    resize: none;
+    height: 120px;
+}
+
+/* Botón de enviar */
+.form__cta {
+    background: #7a5b4b;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form__cta:hover {
+    background: #5a3826;
+}
+
+/* Estilos del título de la sección */
+.texto {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.texto h2 {
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    /* background: rgba(90, 56, 38, 0.8); */
+    background-color: rgba(95, 41, 5, 0.671);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Estilo especial para el número de contacto */
+.contacto-numero {
+    /* color: #d4af37; Dorado elegante */
+    color: rgb(139, 77, 5);
+    font-size: 24px; /* Más grande para destacar */
+    font-weight: bold; /* Negrita para mejor visibilidad */
+    text-align: center; /* Centrado para armonía */
+    margin-top: 20px; /* Espaciado superior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra sutil para profundidad */
+}
+
+.contacto-email {
+    /* color: #d4af37; */
+    color: rgb(139, 77, 5);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

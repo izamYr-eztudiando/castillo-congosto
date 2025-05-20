@@ -72,3 +72,7 @@ def ver_mensaje(request, id):
 # def resenas(request):
 #     context = {}
 #     return render(request, 'resenas.html', context=context)
+
+def prueba(request):
+    context = {}
+    return render (request, 'prueba.html', context=context)

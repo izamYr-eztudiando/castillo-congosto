@@ -38,7 +38,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://timely-ot-baths-meat.trycloudflare.com',
     'https://digital-endorsement-sites-essentially.trycloudflare.com',
     'https://stable-sierra-alert-advert.trycloudflare.com',
-    'https://telephony-walls-composer-hansen.trycloudflare.com'
+    'https://telephony-walls-composer-hansen.trycloudflare.com',
+    'https://nato-hosted-advise-bid.trycloudflare.com',
 ]
 
 ROOT_URLCONF = 'pcastillocongosto.urls'
