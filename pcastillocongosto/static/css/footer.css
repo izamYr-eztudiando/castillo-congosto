@@ -1,89 +1,105 @@
 footer {
     /* background: #5a3826; Color oscuro elegante */
     /* background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%); */
-    background: #a5b5d8;
-    padding: 20px 0;
+    /* background: #a5b5d8; */
+    display: flex;
+    background: #8eaae5;
+    /* padding: 20px 0; */
+    padding: 0;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-/* Contenedor para centrar contenido */
-.footer-container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
-}
-
-/* Logo del footer */
-.footer-logo img {
-    height: 48px;
-    width: 48px;
-}
-
-.political-links {
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+    height: 118px;
 }
 
 ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
 }
 
 li {
     padding-inline: 10px;
 }
 
+/* Contenedor para centrar contenido */
+.footer-container {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo del footer */
+/* .footer-logo img {
+    height: 48px;
+    width: 48px;
+} */
+
+/* Enlaces a la política del castillo */
+.political-links {
+    width: fit-content;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+/* estilo enlace */
 .political-link {
     text-decoration: none;
     /* font-style: italic; */
     color: rgb(255, 255, 255);
 }
 
-/* Contenedor de los iconos sociales */
+/* Iconos de las redes sociales */
 .social-icons {
+    height: 100%;
+    width: 100%;
+    max-width: 150px;
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    /* gap: 10px; */
+    flex-direction: column;
+}
+/* posicion de iconos */
+.social-links {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* estilo del título */
+.social-icons h4 {
     margin-top: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+    font-weight: 500;
+    position: relative;
 }
 
-/* Estilo de cada icono social */
+/* estilo de cada icono social */
 .social-icon img {
     transition: 0.3s;
     cursor: pointer;
     transform: height 2s, width 2s;
 }
 
-/* Efecto al pasar el ratón sobre los iconos */
+/* efecto al pasar el ratón sobre los iconos */
 .social-icon img:hover {
     transform: scale(1.1);
     height: 50px;
     width: 50px;
     transform: height 2s, width 2s;
 }
-
-/* Diseño responsive */
-/* @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
+/* RESPONSIVE */
+@media (max-width: 860px) {
+    .footer {
+        height: 140px;
     }
 
-    .social-icons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-} */
- @media (max-width: 860px) {
     .footer-logo {
         display: none;
     }
@@ -91,6 +107,7 @@ li {
     .footer-container {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         width: 100%;
     }
 

@@ -40,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://stable-sierra-alert-advert.trycloudflare.com',
     'https://telephony-walls-composer-hansen.trycloudflare.com',
     'https://nato-hosted-advise-bid.trycloudflare.com',
+    'https://racks-graph-acquired-nhs.trycloudflare.com',
 ]
 
 ROOT_URLCONF = 'pcastillocongosto.urls'
