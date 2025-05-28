@@ -39,6 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid orangered;
 }
 
 .texto-pergamino h3 {
@@ -130,6 +131,28 @@ body {
 }
 
 /* RESPONSIVE */
+@media (max-width:860px) {
+    .pergamino-container {
+
+    }
+
+    .pergamino {
+        
+    }
+
+    .texto-pergamino {
+        font-size: calc(100% - 20%);
+    }
+
+    .servicios {
+
+    }
+
+    .lista-servicios {
+
+    }
+}
+
 @media (max-width: 768px) {
     .texto-pergamino {
         padding: 30px 20px;
@@ -145,5 +168,52 @@ body {
 
     .servicio {
         font-size: 16px;
+    }
+}
+
+@media (max-width:430px) {
+    /* SE ESTAN PEGANDO LAS CARACTERÍSTICAS NO RESPONSIVE AQUÍ PARA VER QUE CAMBIAR */
+    .pergamino-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .texto-pergamino {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .servicios {
+        width: 70%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: auto;
+    }
+
+    .lista-servicios {
+        display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-width: 700px;
+    width: 100%;
     }
 }

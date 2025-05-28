@@ -28,6 +28,12 @@ p {
     margin: 0 auto 15px auto; /* Centrado con margen inferior */
 }
 
+.form-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
 /* Contenedor del formulario */
 .form {
@@ -139,4 +145,11 @@ p {
     text-align: center;
     margin-top: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width:860px) {
+    .form-contacto {
+        flex-direction: column;
+        height: 100%;
+    }
 }

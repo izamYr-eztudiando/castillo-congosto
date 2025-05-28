@@ -9,7 +9,7 @@ body {
 }
 
 .tabla {
-    border: 2px solid black;
+    border: 2px solid black;    
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -88,4 +88,12 @@ td {
     margin: 0;
     padding: 0;
     text-align: center;
+} 
+
+@media (max-width:430px) {
+    .chat {
+        width: 100%;
+        height: 100%;
+        
+    }
 }

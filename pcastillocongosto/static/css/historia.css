@@ -60,3 +60,11 @@ a:hover {
     text-align: center;
     padding-bottom: 8%;
 }
+
+@media (max-width:860px) {
+    
+}
+
+@media (max-width:430px) {
+
+}

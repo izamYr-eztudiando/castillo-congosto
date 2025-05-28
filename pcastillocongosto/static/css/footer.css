@@ -49,8 +49,16 @@ li {
 /* estilo enlace */
 .political-link {
     text-decoration: none;
+    font-size: 1.2rem;
     /* font-style: italic; */
     color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.political-link:hover {
+    color: navy;
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 /* Iconos de las redes sociales */
@@ -78,22 +86,45 @@ li {
     margin-bottom: 12px;
     font-weight: 500;
     position: relative;
+    animation: colorCycle 4s infinite linear;
 }
 
-/* estilo de cada icono social */
+@keyframes colorCycle {
+    0% { color: navy;}
+    20% { color: crimson;}
+    40% { color: purple;}
+    60% { color: black;}
+    80% { color: darkgreen;}
+    100% { color: navy;}
+}
+
+/* estilo de cada icono social
 .social-icon img {
     transition: 0.3s;
     cursor: pointer;
     transform: height 2s, width 2s;
 }
-
-/* efecto al pasar el ratón sobre los iconos */
+efecto al pasar el ratón sobre los iconos
 .social-icon img:hover {
     transform: scale(1.1);
     height: 50px;
     width: 50px;
     transform: height 2s, width 2s;
+} */
+/* estilo de los svg de cada icono social */
+.social-icon svg {
+    transition: 0.3s;
+    color: white;
+    cursor: pointer;
 }
+/* efecto hover sobre el icono social */
+.social-icon svg:hover {
+    transform: scale(1.1);
+    height: 50px;
+    width: 50px;
+    transform: height 2s, width 2s;
+}
+
 /* RESPONSIVE */
 @media (max-width: 860px) {
     .footer {
