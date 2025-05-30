@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap');
 
 body {
-    background: linear-gradient(135deg, #2c1e1e, #5a3826);
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* flex-direction: column; */
-    /* min-height: 85vw; */
-    /* min-height: 120vh; */
+    /* background: linear-gradient(135deg, #2c1e1e, #5a3826); */
+    background: #a5b5d8;
     height:auto;
     min-height: 100vh;
     margin: 0;
@@ -17,27 +12,31 @@ h2 {
     font-family: 'Cinzel', serif;
     font-weight: lighter;
     font-style: oblique;
-    color: wheat;
+    /* color: wheat; */
+    color: snow;
     text-shadow: 2px 2px 4px black;
 }
 
 p {
-    color: burlywood;
+    /* color: burlywood; */
+    color: black;
     font-size: 18px;
     font-family: 'EB Garamond', serif;
     text-align: justify;
     padding-inline: 0.9%;
 }
 
-a {
+.link {
     text-decoration: none;
-    color: burlywood;
-    text-shadow: 3px 3px 6px rgb(212, 150, 68);
+    /* color: burlywood; */
+    color: blueviolet;
+    /* text-shadow: 3px 3px 6px rgb(212, 150, 68); */
+    /* text-shadow: 3px 3px 6px rebeccapurple; */
     font-size: 18px;
     transition: font-size 1s;
 }
 
-a:hover {
+.link:hover {
     font-size: 20px;
     transition: font-size 1s;
 }
@@ -66,5 +65,21 @@ a:hover {
 }
 
 @media (max-width:430px) {
+    
+    .contenido-principal {
+        padding-top: 20%;
+        padding-bottom: 35%;
+        width: 100%;
+        max-width: 100%;
+        max-height: fit-content;
+    }
 
+    .castillo {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width:320px) {
+    
 }

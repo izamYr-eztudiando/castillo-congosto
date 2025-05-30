@@ -119,6 +119,7 @@ efecto al pasar el ratón sobre los iconos
 }
 /* efecto hover sobre el icono social */
 .social-icon svg:hover {
+    color: navy;
     transform: scale(1.1);
     height: 50px;
     width: 50px;
@@ -126,6 +127,7 @@ efecto al pasar el ratón sobre los iconos
 }
 
 /* RESPONSIVE */
+/* Tablet en general */
 @media (max-width: 860px) {
     .footer {
         height: 140px;
@@ -146,7 +148,58 @@ efecto al pasar el ratón sobre los iconos
         justify-content: center;
     }
 
-    .social-icon img:hover {
+    .social-icon svg:hover {
+        height: 35px;
+        width: 35px;
+        transform: height 2s, width 2s;
+    }
+}
+/* Móvil grande */
+@media (max-width:430px) {
+    .footer {
+        height: 170px;
+    }
+
+    .political-link:hover {
+        font-weight: bold;
+        font-size: 1.26rem;
+    }
+
+    .social-icon svg:hover {
+        height: 45px;
+        width: 45px;
+        transform: heigth 2s, width 2s;
+    }
+}
+/* Móvil mediano */
+@media (max-width:375px) {
+    .footer {
+        height: 170px;
+    }
+
+    .political-link:hover {
+        font-weight: bold;
+        font-size: 1.24rem;
+    }
+
+    .social-icon svg:hover {
+        height: 40px;
+        width: 40px;
+        transform: heigth 2s, width 2s;
+    }
+}
+/* Móvil pequeño */
+@media (max-width:320px) {
+    .footer {
+        height: 170px
+    }
+
+    .political-link:hover {
+        font-weight: bold;
+        font-size: 1.22rem;
+    }
+
+    .social-icon svg:hover {
         height: 35px;
         width: 35px;
         transform: height 2s, width 2s;
