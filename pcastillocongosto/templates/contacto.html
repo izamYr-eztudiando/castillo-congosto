@@ -13,13 +13,13 @@
 <div class="form-contacto">
     <div class="texto">
         <h2>Contacta con nosotros</h2>
-        <p>Contacte con nosotros a través de número o email, o introduzca sus datos en el formulario para que contactemos con usted</p>
+        <p>Contacte con nosotros a través de número o email, o introduzca sus datos en el formulario para que contactemos con usted.</p>
         <p class="contacto-numero">📞 Llámanos: +34 123456789</p>
         <p class="contacto-email">📧 Email: blabla.bleble@blublu.com</p>
     </div>
     <form class="form" method="post">
         {% csrf_token %}
-            <div class="form_container">
+        <div class="form_container">
             <h2 class="form_title">Rellene este formulario</h2>
             <input type="text" name="nombre" class="form__input" placeholder="Nombre:" required>
             <input type="text" name="apellidos" class="form__input" placeholder="Apellidos:">

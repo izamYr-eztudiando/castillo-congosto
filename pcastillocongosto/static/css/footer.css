@@ -194,6 +194,14 @@ efecto al pasar el ratón sobre los iconos
         height: 170px
     }
 
+    .footer-container {
+        width: 100%;
+    }
+
+    .political-links {
+        width: 100%;
+    }
+
     .political-link:hover {
         font-weight: bold;
         font-size: 1.22rem;

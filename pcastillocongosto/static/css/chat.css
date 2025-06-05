@@ -8,12 +8,18 @@ body {
     align-items: center;
 }
 
-.chat {
-    border: 4px solid navy;
+.tabla-responsive {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
-.tabla {
-    border: 2px solid black;    
+.tabla table{
+    border: 2px solid black;
+    min-width: 860px;
+    width: 100%;
+    border-collapse: collapse;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -80,24 +86,31 @@ table {
     border-collapse: collapse;
 }
 
-th {
+th, td {
     border: 0.5px solid black;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
+    padding: 1px;
     text-align: center;
+    white-space: nowrap;
 }
 
-td {
-    border: 0.5px solid black;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-} 
 
 @media (max-width:430px) {
     .chat {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         width: 100%;
-        height: 100%;
-        
+    }
+
+    th, td {
+        font-size: 13px;
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    .num-mensajes-text {
+        font-size: 14px;
     }
 }

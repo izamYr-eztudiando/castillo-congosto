@@ -19,9 +19,11 @@
             display: none;
         }
 
-        body {
+        /* body {
             overflow: hidden;
-        }
+            margin: 0;
+            padding: 0;
+        } */
     </style>
 </head>
 <body>
@@ -31,26 +33,5 @@
     {% endblock %}
 
     {% include "footer.html" %}
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const logo = document.getElementById("logo-expandible");
-            const contenido = document.getElementById("contenido-principal");
-
-            const alturaNavbarNormal = 68;
-            const alturaNavbarExpandido = 138;
-            
-            if (logo && contenido) {
-                contenido.style.paddingTop = alturaNavbarExpandido + "px";
-
-                logo.addEventListener("mouseenter", () => {
-                    contenido.style.paddingTop = alturaNavbarExpandido + "px";
-                });
-
-                logo.addEventListener("mouseleave", () => {
-                    contenido.style.paddingTop = alturaNavbarNormal + "px";
-                });
-            }
-        });
-    </script> -->
 </body>
 </html>

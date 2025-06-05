@@ -16,40 +16,67 @@
             <p class="num-mensajes-text">Mensajes no contestados: {{ numcontestados }}</p>
         </div>
     </div>
-    <div class="tabla">
-        <table>
-            <thead>
-                <th class="th-chat">ID</th>
-                <th class="th-chat">NOMBRE</th>
-                <th class="th-chat">APELLIDOS</th>
-                <th class="th-chat">EMAIL</th>
-                <th class="th-chat">TELEFONO</th>
-                <th class="th-chat">LUGAR</th>
-                <th class="th-chat">FECHA</th>
-                <th class="th-chat">LEIDO</th>
-                <th class="th-chat">CONTESTADO</th>
-                <th class="th-chat">ACCIONES</th>
-            </thead>
-            <tbody>
-                {% for i in lista_contactos %} 
-                    <tr>
-                        <td> {{ i.id }}</td>
-                        <td> {{ i.nombre }}</td>
-                        <td> {{ i.apellidos }}</td>
-                        <!-- <td> <a href="mailto:{{ i.email }}">{{ i.email }}</a></td> -->
-                        <td><a href="https://mail.google.com/mail/?view=cm&to={{ i.email }}" target="_blank" class="email">{{ i.email }}</a></td>
-                        <!-- <td><form method="get"><a href="https://wa.me/34{{ i.telefono }}" target="_blank"><a href="{% url 'ver_contacto' id=i.id %}">{{ i.telefono }}</a></a></form></td> -->
-                        <td> <a href="{% url 'ver_contacto' id=i.id %}" target="_blank" class="telefono">+34 {{ i.telefono }}</a></td>
-                        <td> {{ i.lugar }}</td>
-                        <td> {{ i.fecha|date:"d/m/Y" }}</td>
-                        <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
-                        <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
-                        <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="tabla-responsive">
+        <div class="tabla">
+            <table>
+                <thead>
+                    <th class="th-chat">ID</th>
+                    <th class="th-chat">NOMBRE</th>
+                    <th class="th-chat">APELLIDOS</th>
+                    <th class="th-chat">EMAIL</th>
+                    <th class="th-chat">TELEFONO</th>
+                    <th class="th-chat">LUGAR</th>
+                    <th class="th-chat">FECHA</th>
+                    <th class="th-chat">LEIDO</th>
+                    <th class="th-chat">CONTESTADO</th>
+                    <th class="th-chat">ACCIONES</th>
+                </thead>
+                <tbody>
+                    {% for i in lista_contactos %} 
+                        <tr>
+                            <td> {{ i.id }}</td>
+                            <td> {{ i.nombre }}</td>
+                            <td> {{ i.apellidos }}</td>
+                            <!-- <td> <a href="mailto:{{ i.email }}">{{ i.email }}</a></td> -->
+                            <td><a href="https://mail.google.com/mail/?view=cm&to={{ i.email }}" target="_blank" class="email">{{ i.email }}</a></td>
+                            <!-- <td><form method="get"><a href="https://wa.me/34{{ i.telefono }}" target="_blank"><a href="{% url 'ver_contacto' id=i.id %}">{{ i.telefono }}</a></a></form></td> -->
+                            <td> <a href="{% url 'ver_contacto' id=i.id %}" target="_blank" class="telefono">+34 {{ i.telefono }}</a></td>
+                            <td> {{ i.lugar }}</td>
+                            <td> {{ i.fecha|date:"d/m/Y" }}</td>
+                            <td> {% if i.leido %}✔️{% else %}❌{% endif %}</td>
+                            <td> {% if i.contestado %}✔️{% else %}❌{% endif %}</td>
+                            <td> <a class="boton-accion" href="{% url 'ver_mensaje' id=i.id %}">👁️</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>    
     </div>
+
+    {% if lista_contactos.has_other_pages %}
+        <font size="4">
+            <ul class="pagination">
+                {% if lista_habilidades.has_previous %}
+                    <li><a href="?page={{ lista_contactos.previous_page_numbre }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in lista_contactos.paginator.page_range %}
+                    {% if reservas.number == i %}
+                        <li class="active"><span>{{ i }}<span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if lista_contactos.has_next %}
+                    <li><a href="?page={{ lista_contactos.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        </font>
+    {% endif %}
+
     <div class="btn-actualizar">
         <form method="post">
             {% csrf_token %}
