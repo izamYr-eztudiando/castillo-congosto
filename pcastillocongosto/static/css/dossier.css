@@ -1,7 +1,8 @@
 /* Fondo elegante */
 body {
     /* background: linear-gradient(135deg, #2c1e1e, #5a3826); */
-    background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%);
+    /* background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%); */
+    background: #a5b5d8;
     display: flex;
     align-items: center;
     height: 100vh;
@@ -10,13 +11,14 @@ body {
 }
 
 .dossier {
-    width: 476px;
-    height: 600px;
+    width: 450px;
+    height: 567px;
 }
 
 /* Botón de descarga */
 .dossier-btn {
-    background: #7a5b4b;
+    /* background: #7a5b4b; */
+    background: teal;
     color: white;
     font-size: 18px;
     border: none;
@@ -58,9 +60,9 @@ body {
         width: 400px;
         height: 504px;
     } 
-
+/* 
     .dossier-gallery-mobile-only-vertical {
-        /* display: block; */
+        display: block;
         width: 100%;
         padding: 10px;
     }
@@ -71,7 +73,7 @@ body {
         margin-bottom: 16px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+    } */
 
     .dossier-gallery-mobile-only-horizontal {
         display: block;
