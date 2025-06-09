@@ -10,6 +10,7 @@ body {
 }
 
 .contenido {
+    overflow: scroll;
     border: 4px solid red;
     width: 100%;
     height: 100vh;
@@ -60,4 +61,20 @@ body {
 .boton-atras:hover {
     font-size: 24px;
     transition: 0.5s;
+}
+
+@media (max-width:375px) {
+    .contenido {
+    }
+
+    .datos-personales {
+        font-size: 1.4rem;
+    }
+
+    .mensaje {
+        margin: 0;
+        max-width: 100%;
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
 }
