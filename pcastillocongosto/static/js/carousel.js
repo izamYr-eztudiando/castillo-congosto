@@ -5,19 +5,14 @@ let imagenes = [
         "descripcion": "La boda de sus sueños"
     },
     {
-        "url": "static/images/boda1.jpg",
+        "url": "static/images/castillo-interno-dia.jpg",
         "nombre": "Vivelo como rey",
         "descripcion": "Es el rey gatito"
     },
     {
-        "url": "static/images/mesa.jpg", 
+        "url": "static/images/castillo-interno-atardecer.jpg", 
         "nombre":"Come como rey", 
         "descripcion": "Es un gatito comiendo"
-    },
-    {
-        "url": "static/images/dormitorio.jpg",
-        "nombre" : "Y duerme como rey",
-        "descripcion": "Es un gatito descansando"
     },
 ]
 

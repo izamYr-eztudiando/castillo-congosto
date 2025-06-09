@@ -2,45 +2,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
+    background: #f8f5f0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .contenido {
-    overflow: scroll;
-    border: 4px solid red;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 55%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .datos-personales {
-    border: 2px solid blue;
+    border: 2px solid navy;
     font-family: 'Merriweather', serif;
     font-weight: bold;
     font-style: italic;
+    font-size: 2.8rem;
+    /* color: #5e412f; */
+    border-left: 3px solid #a1887f;
 }
 
 .mensaje {
-    display: flex;
-    height: 50%;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center;
     justify-self: center;
-    align-items: center;
+    align-items: center; */
     /* border: 2px solid black; */
     /* Estilo para el mensaje */
-    background: #fdfaf6;
-    border: 3px solid #a1887f;
-    border-radius: 100px;
+    /* height: 50%; */
+    /* background: #fdfaf6; */
+    /* border: 3px solid #a1887f; */
+    background: #fffdf8;
+    border: 2px dashed #d7b899;
+    border-radius: 20px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
     padding: 40px;
-    margin: 20px;
-    width: 50%;
-    max-width: 50%;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 90%;
     font-family: 'Dancing Scripts', cursive;
-    font-size: 22px;
+    font-size: 2.7rem;
     line-height: 1.6;
     color: #4e342e;
     text-align: left;
@@ -56,25 +66,42 @@ body {
     font-size: 22px;
     cursor: pointer;
     transition: 0.5s;
+    font-size: 2.5rem;
 }
 
 .boton-atras:hover {
-    font-size: 24px;
+    font-size: 2.6rem;
     transition: 0.5s;
 }
 
-@media (max-width:375px) {
-    .contenido {
+@media (max-width:860px) {
+    .datos-personales {
+        font-size: 2rem;
     }
 
+    .mensaje {
+        font-size: 2.5rem;
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .boton-atras {
+        font-size: 2.5rem;
+
+    }
+}
+
+@media (max-width:375px) {
     .datos-personales {
         font-size: 1.4rem;
     }
 
     .mensaje {
+        width: fit-content;
         margin: 0;
         max-width: 100%;
         font-size: 1.5rem;
         line-height: 1.5;
+        margin-bottom: 5%;
     }
 }
