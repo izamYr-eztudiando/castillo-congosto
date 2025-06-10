@@ -1,18 +1,18 @@
 let imagenes = [
     {
         "url": "static/images/entrada-castillo.jpg",
-        "nombre": "Castillo Congosto",
-        "descripcion": "La boda de sus sueños"
+        "nombre": "Castillo de Puente Congosto",
+        "descripcion": "Un castillo de ensueño para celebrar el amor eterno de la pareja perfecta."
     },
     {
         "url": "static/images/castillo-interno-dia.jpg",
-        "nombre": "Vivelo como rey",
-        "descripcion": "Es el rey gatito"
+        "nombre": "Medio",
+        "descripcion": ""
     },
     {
         "url": "static/images/castillo-interno-atardecer.jpg", 
-        "nombre":"Come como rey", 
-        "descripcion": "Es un gatito comiendo"
+        "nombre":"Fin", 
+        "descripcion": "Vuestra historia de amor merece un escenario tan inolvidable como el sentimiento que os une"
     },
 ]
 
