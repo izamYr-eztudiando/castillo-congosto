@@ -36,14 +36,16 @@
 .img {
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
     height: 576px;
-    width: 1134px;
+    /* width: 1134px; Para poner un marco con un ancho determinado */
+    width: fit-content; /* Para hacer que el ancho del marco sea el ancho de la imagen original */
     border-radius: 15px;
     margin: 5px;
-    object-fit: contain;
+    object-fit: scale-down;
     filter: saturate(175%);
 }
 
 .texto {
+    border: 2px solid black;
     overflow: hidden;
     position: absolute;
     flex-direction: column;
@@ -52,7 +54,7 @@
     backdrop-filter: blur(20px);
     background-color: rgba(63, 106, 138, 0.21);
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     border-radius: 30px;
     font-family: 'Roboto', sans-serif;
@@ -63,11 +65,10 @@
     padding-top: 40px;
     color: snow;
     font-weight: 300;
-    font-size: 27px;
+    font-size: 1.7rem;
 }
 
 .texto p {
-    align-items: center;
     padding: 20px;
     color: white;
     font-size: 0px;
@@ -77,7 +78,7 @@
 
 .imagenes .texto{
     width: 600px;
-    height: 100px;
+    height: 120px;
     transform: 1s;
 }
 

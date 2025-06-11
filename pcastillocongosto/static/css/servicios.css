@@ -14,7 +14,7 @@ body {
 .pergamino-container {
     overflow: auto;
     position: relative;
-    margin-top: 12%;
+    padding-top: 8%;
     width: 90%;
     max-width: 900px;
 }
@@ -24,12 +24,23 @@ body {
     height: auto;
     display: block;
     border-radius: 12px;
+    transform: rotate(2deg);
+    animation: rotar 1.5s ease-in-out forwards;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) ;
+    }
 }
 
 /* TEXTO SOBRE EL PERGAMINO */
 .texto-pergamino {
     position: absolute;
-    top: 15%;
+    top: 25%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -41,6 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: rotar 1.5s ease-in-out forwards;
 }
 
 .texto-pergamino h3 {
@@ -75,7 +87,7 @@ body {
 }
 
 .servicio {
-    font-size: 20px;
+    font-size: 1.5rem;
     /* color: #3e2f20; */
     color: navy;
     font-weight: bolder;
@@ -170,6 +182,42 @@ body {
 
     .servicio {
         font-size: 16px;
+    }
+}
+
+@media (max-width:650px) {
+    .pergamino {
+        display: none;
+    }
+
+    .texto-pergamino {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 7%;
+        left: 0;
+        width: 100%;
+        padding: 20px 5px;
+    }
+
+    .texto-pergamino h3 {
+        padding-top: 5%;
+        margin-bottom: 5%;
+        font-size: 2rem;
+    }
+
+    .servicios {
+        width: 80%;
+    }
+
+    .lista-servicios {
+        display: grid;
+        gap: 10px 20px;
+    }
+
+    .servicio {
+        font-size: 1.5rem;
     }
 }
 
