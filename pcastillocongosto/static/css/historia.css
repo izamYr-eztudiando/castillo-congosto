@@ -10,6 +10,7 @@ body {
 
 h2 {
     font-family: 'Cinzel', serif;
+    /* font-family: inherit; */
     font-weight: lighter;
     font-style: oblique;
     /* color: wheat; */
@@ -19,9 +20,11 @@ h2 {
 
 p {
     /* color: burlywood; */
-    color: black;
+    /* color: black; */
+    color: #ccc4bc;
     font-size: 18px;
-    font-family: 'EB Garamond', serif;
+    /* font-family: 'EB Garamond', serif; */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     text-align: justify;
     padding-inline: 0.9%;
 }

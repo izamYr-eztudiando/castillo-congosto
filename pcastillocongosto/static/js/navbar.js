@@ -133,15 +133,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let isOpen = false;
     let hasInteracted = false;
+    let isFirstLoad = true;
 
     function updateDropdown() {
         const isMobile = window.innerWidth <= 860;
 
         if (!isMobile) {
-            dropDownMenu.classList.remove('open', 'animated');
-            dropDownMenu.style.display = 'none';
-            toggleBtnIcon.className = 'fa-solid fa-bars';
+            // dropDownMenu.classList.remove('open', 'animated');
+            dropDownMenu.classList.remove('animated', 'closing')
+            // dropDownMenu.style.display = 'none';
+            dropDownMenu.style.opacity = 0;
+            dropDownMenu.style.visibility = 'hidden'
+            // toggleBtnIcon.className = 'fa-solid fa-bars';
             return;
+        }
+
+        if (isFirstLoad) {
+            dropDownMenu.classList.remove('animated', 'closing');
+            dropDownMenu.style.opacity = 0;
+            dropDownMenu.style.visibility = 'hidden';
+            isFirstLoad = false;
+            return
         }
 
         if (hasInteracted) {
@@ -149,18 +161,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (isOpen) {
-            dropDownMenu.classList.add('open');
-            dropDownMenu.style.display = 'block';
-            toggleBtnIcon.className = 'fa-solid fa-xmark';
+            // dropDownMenu.classList.add('open');
+            dropDownMenu.classList.add('animated');
+            // dropDownMenu.style.display = 'block';
+            dropDownMenu.style.opacity = 1;
+            dropDownMenu.style.visibility = 'visible';
+            // toggleBtnIcon.className = 'fa-solid fa-xmark';
         } else {
-            dropDownMenu.classList.remove('open');
-            dropDownMenu.style.display = 'none';
-            toggleBtnIcon.className = 'fa-solid fa-bars';
+            // dropDownMenu.classList.remove('open');
+            dropDownMenu.classList.remove('animated');
+            dropDownMenu.classList.add('closing');
+            // dropDownMenu.style.display = 'none';
+            // dropDownMenu.style.opacity = 0;
+            setTimeout(() => {
+                dropDownMenu.classList.remove('closing');
+                dropDownMenu.style.opacity = 0;
+                dropDownMenu.style.visibility = 'hidden';
+            }, 500)
+            // dropDownMenu.style.visibility = 'hidden';
+            // toggleBtnIcon.className = 'fa-solid fa-bars';
         }
     }
 
     toggleBtn.addEventListener('click', function () {
         if (window.innerWidth <= 860) {
+            toggleBtn.classList.toggle('open');
             isOpen = !isOpen;
             hasInteracted = true;
             updateDropdown();

@@ -26,12 +26,16 @@
             {% endif %}
         </ul>
         <!-- Botón Hamburguesa -->
-        <div class="toggle_btn">
+        <!-- <div class="toggle_btn">
             <i class="fa-solid fa-bars"></i>
+        </div> -->
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars icon icon-bars"></i>
+            <i class="fa-solid fa-xmark icon icon-xmark"></i>
         </div>
     </div>
 </nav>
-<div class="dropdown_menu open">
+<div class="dropdown_menu">
     <li><p>Menú</p></li>
     <li><a href="{% url 'home' %}">Inicio</a></li>
     <li><a href="{% url 'historia' %}">Historia</a></li>

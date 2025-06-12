@@ -43,7 +43,7 @@
 .navbar-menu li {
     display: inline-block;
 }
-
+/* Estilo de cada enlace */
 .navbar-menu a {
     color: white;
     text-decoration: none;
@@ -51,12 +51,12 @@
     padding: 10px 15px;
     transition: 0.3s;
 }
-
+/* Hover sobre el enlace */
 .navbar-menu a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
-
+/* Boton de interacción para el dropdown */
 .toggle_btn {
     color: #fff;
     font-size: 1.5rem;
@@ -64,21 +64,39 @@
     display: none;
 }
 
-/* DROPDOWN MENU */
-/* dropdown menu original */
-/* .dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 100px;
-    height: 0;
-    width: 300px;
-    background: #12134c;
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0;
-    z-index: 999;
-} */
+/* .toggle_btn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+ */
+.icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  color: white;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estado por defecto: solo barras visibles */
+.icon-xmark {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+/* Estado abierto: mostrar xmark, ocultar bars */
+.toggle_btn.open .icon-bars {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.toggle_btn.open .icon-xmark {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 /* dropdown menu sidebar */
 .dropdown_menu {
     position: fixed;
@@ -88,12 +106,13 @@
     height: 100vh;
     background-color: #12134c;
     overflow-x: hidden;
-    transition: width 0.4s ease;
+    /* transition: width 0.4s ease; */
     z-index: 999;
     padding: 2rem 1rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    /* transition: height 1.5s ease, opacity 1.4s ease; */
 }
-
+/* estilo de cada lista del dropdown */
 .dropdown_menu li {
     padding: 0.7rem;
     display: flex;
@@ -101,7 +120,7 @@
     justify-content: center;
     border-bottom: 1px solid #ffffff33;
 }
-
+/* estilo de cada enlace del dropdown */
 .dropdown_menu a {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -111,35 +130,47 @@
     text-align: center;
     width: 100%;
 }
-
-.dropdown_menu p {
-    color: aquamarine;
-    font-size: 18px;
-}
-
+/* hover sobre el enlace del dropdown */
 .dropdown_menu a:hover {
     background: #7a93b0;
     border-radius: 10px;
 }
-
+/* titulo del dropdown */
+.dropdown_menu p {
+    color: aquamarine;
+    font-size: 18px;
+}
+/* animación al abrir */
 .dropdown_menu.animated {
-    transition: height 1.5s ease, opacity 1.4s ease;
+    animation: menuOpen 0.5s forwards linear;
+    /* transition: height 2.5s ease, opacity 1.4s ease; */
 }
-/* dropdown menu open sidebar */
-.dropdown_menu {
-    width: 250px;
+/* animación al cerrar */
+.dropdown_menu.closing {
+    animation: menuClose 0.5s forwards linear;
 }
-
-/* TODO LO DEMAS DEL SIDEBAR ESTA EN EL CHATGPT*/
-
-/* dropdown menu open original */
-/* .dropdown_menu.open {
-    display: block;
-    height: 100%;
-    opacity: 1;
-    pointer-events: auto;
-} */
-
+/* abrir menu */
+@keyframes menuOpen {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100vh;
+    }
+}
+/* cerrar menu */
+@keyframes menuClose {
+    0% {
+        opacity: 1;
+        height: 1;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
 /* MODAL */
 .modal {
     display: none;
@@ -160,7 +191,6 @@
     max-width: 90%;
     max-height: 80%;
     border-radius: 12px;
-    /* box-shadow: 0 0 20px black; */
 }
 
 .close {
@@ -188,7 +218,6 @@
     }
 
     .dropdown_menu {
-        display: none;
         justify-self: center;
         width: 96.19%;
         top: 81px;
@@ -198,21 +227,10 @@
 }
 
 @media (min-width:861px) {
-    .dropdown_menu {
-        display: flex;
-    }
-
     .toggle_btn {
         display: none;
     }
 }
-
-/* @media (max-width:500px) {
-    .dropdown_menu {
-        width: 100%;
-    }
-} */
-
 @media (max-width:430px) {
     .dropdown_menu {
         width: 92.5%;
