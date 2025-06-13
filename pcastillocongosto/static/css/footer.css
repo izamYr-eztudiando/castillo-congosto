@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
 .footer {
     /* background: #5a3826; Color oscuro elegante */
     /* background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%); */
@@ -14,6 +16,7 @@
 }
 
 ul {
+    /* margin-left: 5rem; */
     list-style: none;
     display: flex;
 }
@@ -40,12 +43,17 @@ li {
 
 /* Enlaces a la política del castillo */
 .political-links {
-    width: fit-content;
-    display: inline;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center;  */
     margin: auto;
 }
+
+.political-link-list {
+    border: 2px solid white;
+}
+
 /* estilo enlace */
 .political-link {
     text-decoration: none;
@@ -134,7 +142,7 @@ efecto al pasar el ratón sobre los iconos
     left: 0;
     top: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
     justify-content: center;
@@ -145,18 +153,56 @@ efecto al pasar el ratón sobre los iconos
     background-color: #fff;
     padding: 2rem;
     max-width: 600px;
-    width: 90%;
+    width: 100%;
     border-radius: 10px;
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
+
+    overflow-y: auto;
+    max-height: 80vh;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.modal-content h2,
+.modal-content h3,
+.modal-content h4 {
+    margin-bottom: 0;
+}
+
+.modal-content p {
+    margin-top: 0.5rem;
+}
+
+.modal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
 }
 
 .close-btn {
-    position: relative;
+    position: absolute;
     right: 1rem;
     top: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.political-title {
+    font-family: "Alice", serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.political-content {
+    font-family: "Alice", serif;
+    font-weight: 300;
 }
 
 @keyframes fadeIn {
