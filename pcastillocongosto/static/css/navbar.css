@@ -172,7 +172,7 @@
     }
 }
 /* MODAL */
-.modal {
+.modal-logo {
     display: none;
     position: fixed;
     z-index: 999;
@@ -187,7 +187,7 @@
     box-sizing: border-box;
 }
 
-.modal-content {
+.modal-logo-content {
     max-width: 90%;
     max-height: 80%;
     border-radius: 12px;

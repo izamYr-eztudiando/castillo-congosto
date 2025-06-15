@@ -51,7 +51,7 @@ li {
 }
 
 .political-link-list {
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 
 /* estilo enlace */
@@ -98,15 +98,6 @@ li {
     animation: colorCycle 4s infinite linear;
 }
 
-@keyframes colorCycle {
-    0% { color: navy;}
-    20% { color: crimson;}
-    40% { color: purple;}
-    60% { color: black;}
-    80% { color: darkgreen;}
-    100% { color: navy;}
-}
-
 /* estilo de cada icono social
 .social-icon img {
     transition: 0.3s;
@@ -133,6 +124,15 @@ efecto al pasar el ratón sobre los iconos
     height: 50px;
     width: 50px;
     transform: height 2s, width 2s;
+}
+
+@keyframes colorCycle {
+    0% { color: navy;}
+    20% { color: crimson;}
+    40% { color: purple;}
+    60% { color: black;}
+    80% { color: darkgreen;}
+    100% { color: navy;}
 }
 
 .modal {

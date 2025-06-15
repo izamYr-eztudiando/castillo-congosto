@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const logo = document.getElementById('logo-expandible');
-    const modal = document.getElementById('modal');
+    const modal = document.getElementById('modal-logo');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.querySelector('.close');
 
