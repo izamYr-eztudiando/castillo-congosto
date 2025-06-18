@@ -22,10 +22,12 @@ urlpatterns = [
     path('servicios/', views.servicios, name='servicios'),
     path('chat/', views.chat, name='chat'),
     path('prueba/', views.prueba, name='prueba'),
+    path('autor/', views.autor, name='autor'),
     re_path(r'^(?P<id>\d+)/ver_mensaje$', views.ver_mensaje, name='ver_mensaje'),
     re_path(r'^(?P<id>\d+)/ver_contacto$', views.ver_contacto, name='ver_contacto'),
     re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces
     # path('resenas/', views.resenas, name='resenas'),
+    
 ]
 
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

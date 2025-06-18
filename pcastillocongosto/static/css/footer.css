@@ -241,7 +241,7 @@ efecto al pasar el ratón sobre los iconos
 /* Móvil grande */
 @media (max-width:430px) {
     .footer {
-        height: 170px;
+        height: 150px;
     }
 
     .political-link:hover {
@@ -258,7 +258,7 @@ efecto al pasar el ratón sobre los iconos
 /* Móvil mediano */
 @media (max-width:375px) {
     .footer {
-        height: 170px;
+        height: 150px;
     }
 
     .political-link:hover {
@@ -275,7 +275,7 @@ efecto al pasar el ratón sobre los iconos
 /* Móvil pequeño */
 @media (max-width:320px) {
     .footer {
-        height: 170px
+        height: 150px
     }
 
     .footer-container {

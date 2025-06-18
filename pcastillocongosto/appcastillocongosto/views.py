@@ -109,3 +109,7 @@ def ver_mensaje(request, id):
 def prueba(request):
     context = {}
     return render (request, 'prueba.html', context=context)
+
+def autor(request):
+    context = {}
+    return render (request, 'autor.html', context=context)

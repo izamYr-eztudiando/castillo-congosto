@@ -1,0 +1,206 @@
+/* Fondo general */
+body {
+    background: #a5b5d8;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.autor {
+    border: 2px solid black;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    /* background-color: bisque; */
+    background-color: #00529F;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Internos */
+.autor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Puedes estilizar más estas secciones si las vas a usar */
+.datos-personales {
+    text-align: center;
+}
+
+.datos-personales h2 {
+    font-size: 2.3rem;
+}
+
+/* AUTOR */
+/* Botón */
+#mostrar-autor {
+    background-color: #4a69bd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#mostrar-autor:hover {
+    background-color: #3b5998;
+}
+
+/* Estilo oculto inicialmente */
+#info-autor {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 1.6s ease, transform 1.6s ease;
+    text-align: center;
+    margin-top: 15px;
+}
+/* Mostrar con animación */
+#info-autor.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nombre-crossfade {
+    /* position: relative; */
+    height: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nombre {
+    margin: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
+    transition-delay: 4s;
+}
+
+.nombre.cambiar {
+    color: snow;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 400;
+    /* animation: colorCycleRealMadrid 8s infinite ease-in-out; */
+}
+
+@keyframes colorCycleRealMadrid {
+  0%   { color: #ffffff; }   /* blanco */
+  20%  { color: #00529F; }   /* azul real madrid */
+  40%  { color: #FFD700; }   /* dorado */
+  60%  { color: #5B2C6F; }   /* morado */
+  80%  { color: #000000; }   /* negro */
+  100% { color: #ffffff; }   /* blanco */
+}
+
+@keyframes colorCycle {
+    0% { color: navy;}
+    20% { color: crimson;}
+    40% { color: purple;}
+    60% { color: black;}
+    80% { color: darkgreen;}
+    100% { color: navy;}
+}
+
+.image-crossfade {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.img-fade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: opacity 5s ease;
+}
+
+.img-uno {
+    opacity: 1;
+}
+
+.img-dos {
+    opacity: 0;
+}
+
+.image-crossfade.cambiar .img-uno{
+    opacity: 0;
+}
+
+.image-crossfade.cambiar .img-dos {
+    opacity: 1;
+}
+
+.estudios {
+    text-align: center;
+}
+
+.estudios h2 {
+    margin-top: 30px;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.estudio {
+    margin: 0;
+    opacity: 1;
+    transition: opacity 2s ease; /* Lo que tarda en desaparecer */
+    transition-delay: 4s; /* Tiempo de esperas antes de la animación */
+}
+
+.estudio.cambiar {
+    /* margin-top: 10px; */
+    color: snow;
+    font-size: 2rem;
+    font-weight: 400;
+    /* animation: colorCycle 4s infinite linear; */
+}
+
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+    .autor {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width:430px) {
+    .autor {
+        margin-top: 10%;
+        margin-bottom: 30%;
+    }
+}
+
+@media (max-width:375px) {
+    .autor {
+        margin-top: 25%;
+        margin-bottom: 45%;
+    }
+}
+
+@media (max-width:320px) {
+    .nombre.cambiar {
+        font-size: 1.8rem;
+    }
+
+    .estudio.cambiar {
+        font-size: 1.8rem;
+    }
+
+    .autor {
+        margin-top: 30%;
+        margin-bottom: 50%;
+    }
+}
