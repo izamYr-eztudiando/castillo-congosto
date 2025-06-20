@@ -2,38 +2,27 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/servicios.css' %}">
-<title>{% block title %}Servicios{% endblock %}</title>
+<title>Servicios</title>
 {% endblock %}
+
 {% block content %}
-    <!-- <div class="titulo-pergamino-container">
-        <img src="{% static 'images/titulo-pergamino2.png' %}" alt="Servicios" class="titulo-pergamino">
-        <div class="texto-titulo-pergamino">
-            <h2>Servicios</h2>
-        </div>
-    </div> -->
-    <div class="pergamino-container">
-        <img src="{% static 'images/pergamino2.png' %}" alt="Servicios disponibles" class="pergamino">
-        <div class="texto-pergamino">
-            <h3>Servicios disponibles</h3>
-            <div class="servicios">
-                <ul class="lista-servicios">
-                    <li class="servicio"><a href="#" data-img="{% static 'images/mesa.jpg' %}">Catering</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/maquillaje.jpg' %}">Maquillaje</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/peluqueria.jpg' %}">Peluquería</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/dj.jpg' %}">DJ</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/ninera-bodas.jpg' %}">Animación Infantil</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/dron-bodas.jpg' %}">Piloto de dron</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/cortador-jamon.jpg' %}">Cortador de jamón</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/autobus-boda.jpg' %}">Servicio de autobuses</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/asesoramiento.jpg' %}">Asesoramiento</a></li>
-                    <li class="servicio"><a href="#" data-img="{% static 'images/floristeria.jpg' %}">Floristeria</a></li>
-                </ul>
-                <div id="modal" class="modal">
-                    <span class="close">&times;</span>
-                    <img id="modal-img" class="modal-content" alt="Imagen del servicio">
-                </div>
+<section class="servicios-section">
+    <h2 class="titulo-servicios">Servicios Disponibles</h2>
+    <div class="grid-servicios">
+        {% for servicio, imagen in servicios %}
+        <div class="tarjeta-servicio" data-img="{% static imagen %}">
+            <img src="{% static imagen %}" alt="{{ servicio }}" class="img-servicio">
+            <div class="info-servicio">
+                <h3>{{ servicio }}</h3>
             </div>
         </div>
+        {% endfor %}
     </div>
+
+    <div id="modal-servicio" class="modal-servicio">
+        <span class="close-servicio">&times;</span>
+        <img id="modal-img-servicio" class="modal-content-servicio" alt="Imagen del servicio">
+    </div>
+</section>
 <script src="{% static 'js/servicios.js' %}"></script>
 {% endblock %}

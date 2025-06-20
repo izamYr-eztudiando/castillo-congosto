@@ -1,55 +1,54 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% load static %}
 
 {% block head %}
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
-  integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
-  crossorigin="anonymous"></script> -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-  crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
+
 {% block content %}
-  <div class="home">
-    {% include "carousel.html" %}
-    <p class="reference">Referencias en medios nacionales -> <a href="https://www.marca.com/tiramillas/2025/02/14/67af2389ca4741a1218b4584.html" target="_blank">enlace</a></p>
-    <!-- <h1>Páginas a hacer responsive en este orden</h1> -->
-    <!-- <ol>
-      <li>
-        <p>Lista-contactos 🛠️</p>
-      </li>
-      <li>
-        <p>Servicios 🛠️</p>
-      </li>
-      <li>
-        <p>Contacto 🛠️</p>
-      </li>
-      <li>
-        <p>Dossier 🛠️</p>
-      </li>
-      <li>
-        <p>Ubicación 🛠️</p>
-      </li>
-      <li>
-        <p>Mensaje 🛠️</p>
-      </li>
-      <li>
-        <p>Inicio ❌</p>
-      </li>
-      <li>
-        <p>Historia 🛠️</p>
-      </li>
-    </ol> -->
-    <!-- <h2 style="color: red;">Actualizar al acabar dicha página</h2>
-    <h2>Hacer en cada css con el mínimo y el máximo de cada dispositivo (movil y tablet)</h2>
-    <h1>Hola</h1>
-    <h2>Vuestra historia de amor merece un escenario tan inolvidable como el sentimiento que os une</h2>
-    <p>Cambiar imagenes del carousel a 3, la primera esta bien, las dos ya sabes cuales son</p>
-    <p>Cambiar titulos de las imagenes</p>
-    <h3>hola</h3> -->
-    <!-- Enlace directo a noticia al marca (castillo congosto) -> "Referencias en medios nacionales"--> 
-    <!-- Creacion redes (Instagram y Tiktok) -> castillodelpuentecongosto@gmail.com -->
+<!-- --------------- HERO VÍDEO ---------------- -->
+<div class="hero-video">
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="{% static 'images/castillo-exterior.mp4' %}" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+  <div class="overlay"></div>
+  <div class="hero-text">
+    <h1>Castillo de Puente del Congosto</h1>
+    <p>Vuestra historia de amor merece un escenario tan inolvidable como el sentimiento que os une</p>
   </div>
+</div>
+
+<!-- --------------- GALERÍA RÁPIDA (opcional) ---------------- -->
+<section class="galeria-inicio">
+  <img src="{% static 'images/castillo.jpg' %}" alt="Entrada del castillo">
+  <img src="{% static 'images/castillo-google-maps.png' %}" alt="Patio de Armas">
+  <img src="{% static 'images/mesa.jpg' %}" alt="Salón interior">
+</section>
+
+<!-- --------------- NOTICIA DESTACADA ---------------- -->
+<section class="noticia-destacada">
+  <div class="noticia-img">
+    <img src="{% static 'images/portada-marca.jpg' %}" alt="Noticia en Marca">
+  </div>
+
+  <div class="noticia-info">
+    <h2>🌟 Puente Congosto en la prensa nacional</h2>
+    <p>El diario <strong>Marca</strong> dedica un reportaje especial al castillo, destacando su magia como destino de
+      bodas inolvidables.</p>
+    <a href="https://www.marca.com/tiramillas/2025/02/14/67af2389ca4741a1218b4584.html" target="_blank" rel="noopener"
+      class="btn-leer">
+      Leer artículo completo →
+    </a>
+  </div>
+</section>
+
+<!-- ALBUM MOSAICO -->
+<section class="masonry">
+  {% for img in imagenes_masonry %}
+    <div class="brick">
+      <img src="{% static img %}" alt="Castillo - imagen {{ forloop.counter }}" loading="lazy">
+    </div>
+    {% endfor %}
+</section>
 {% endblock %}

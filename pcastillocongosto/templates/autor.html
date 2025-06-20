@@ -13,59 +13,18 @@
             <div id="info-autor" class="oculto">
                 <div class="image-crossfade" id="crossfade-box">
                     <img src="{% static 'images/autor.png' %}" class="img-fade img-uno" alt="Foto anonima">
-                    <img src="{% static 'images/boda1.jpg' %}" class="img-fade img-dos" alt="Foto del autor">
+                    <img src="{% static 'images/Yo.png' %}" class="img-fade img-dos" alt="Foto del autor">
                 </div>
                 <div class="nombre-crossfade" id="crossfade-nombre">
                     <p class="nombre" id="nombre">AYsamir</p>
-                    <!-- <p class="nombre">Isamir Valencia López</p> -->
                 </div>    
                 <div class="estudios" id="mostrar-estudios">
                     <h2>Licenciado en</h2>
                     <p class="estudio" id="estudio">Llegar tarde</p>
-                    <!-- <p class="estudio">Desarrollo de Aplicaciones Multiplataforma</p> -->
                 </div>
             </div>
         </div>
-        <!-- <div class="estudios">
-            <h2>Graduado en ...</h2>
-            <p class="estudio">Desarrollo de Aplicaciones Multiplataforma</p>
-        </div> -->
     </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("mostrar-autor");
-        const info = document.getElementById("info-autor");
-        const box = document.getElementById("crossfade-box");
-        // const nombreBox = document.getElementById("crossfade-nombre");
-        const nombre = document.getElementById("nombre");
-        // const estudios = document.getElementById("mostrar-estudios");
-        const estudio = document.getElementById("estudio");
-
-        btn.addEventListener("click", () => {
-            info.classList.add("mostrar");
-            setTimeout(() => {
-                box.classList.add("cambiar");
-                // nombreBox.classList.add("cambiar");
-            }, 4000)
-
-            nombre.style.opacity = 0;
-            setTimeout(() => {
-                nombre.classList.add("cambiar")
-                nombre.textContent = "Isamir Valencia López";
-                nombre.style.opacity = 1;
-            }, 6500)
-
-            estudio.style.opacity = 0;
-            setTimeout(() => {
-                // estudios.classList.add("cambiar");
-                estudio.classList.add("cambiar")
-                estudio.textContent = "Desarrollo de Aplicaciones Multiplataforma";
-                estudio.style.opacity = 1;
-            }, 9500)
-
-            btn.style.display = "none";
-        });
-    });
-</script>
+<script src="{% static 'js/autor.js' %}"></script>
 {% endblock %}

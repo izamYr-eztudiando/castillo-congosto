@@ -12,8 +12,10 @@
 <br><br><br><br>
 <div class="form-contacto">
     <div class="texto">
-        <h2>Contacta con nosotros</h2>
-        <p>Contacte con nosotros a través de número o email, o introduzca sus datos en el formulario para que contactemos con usted.</p>
+        <h2 class="texto-title">Contacta con nosotros</h2>
+        <p class="texto-p">Contacte con nosotros a través de número o email, o introduzca sus datos en el formulario
+            para que
+            contactemos con usted.</p>
         <p class="contacto-numero">📞 Llámanos: +34 623 94 91 60</p>
         <p class="contacto-email">📧 Email: castillodelpuentecongosto@gmail.com</p>
     </div>
@@ -23,12 +25,172 @@
             <h2 class="form_title">Rellene este formulario</h2>
             <input type="text" name="nombre" class="form__input" placeholder="Nombre:" required>
             <input type="text" name="apellidos" class="form__input" placeholder="Apellidos:">
-            <input type="text" name="lugar" class="form__input" placeholder="Lugar:">
-            <input type="number" name="telefono" class="form__input" placeholder="Número:" required>
+            <!-- <input type="text" name="lugar" class="form__input" placeholder="Lugar:"> -->
+            <p class="texto-p">¿Eres de España?</p>
+            <div class="espana-radio">
+                <label>
+                    <input type="radio" name="es_de_espana" value="sí" id="es_espana_si" required> Sí
+                </label>
+                <label>
+                    <input type="radio" name="es_de_espana" value="no" id="es_espana_no"> No
+                </label>
+            </div>
+            <div id="provincia-container" class="provincia-div">
+                <label for="provincia">Provincia:</label>
+                <select name="lugar" id="provincia">
+                    <option value="" selected disabled>Seleccione una provincia</option>
+                    <option value="Albacete">Albacete</option>
+                    <option value="Alicante">Alicante</option>
+                    <option value="Almería">Almería</option>
+                    <option value="Álava">Álava</option>
+                    <option value="Asturias">Asturias</option>
+                    <option value="Ávila">Ávila</option>
+                    <option value="Badajoz">Badajoz</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Burgos">Burgos</option>
+                    <option value="Cáceres">Cáceres</option>
+                    <option value="Cádiz">Cádiz</option>
+                    <option value="Cantabria">Cantabria</option>
+                    <option value="Castellón">Castellón</option>
+                    <option value="Ciudad Real">Ciudad Real</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Cuenca">Cuenca</option>
+                    <option value="Gerona">Gerona</option>
+                    <option value="Granada">Granada</option>
+                    <option value="Guadalajara">Guadalajara</option>
+                    <option value="Guipúzcoa">Guipúzcoa</option>
+                    <option value="Huelva">Huelva</option>
+                    <option value="Huesca">Huesca</option>
+                    <option value="Islas Baleares">Islas Baleares</option>
+                    <option value="Jaén">Jaén</option>
+                    <option value="La Coruña">La Coruña</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Las Palmas">Las Palmas</option>
+                    <option value="León">León</option>
+                    <option value="Lérida">Lérida</option>
+                    <option value="Lugo">Lugo</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Málaga">Málaga</option>
+                    <option value="Murcia">Murcia</option>
+                    <option value="Navarra">Navarra</option>
+                    <option value="Orense">Orense</option>
+                    <option value="Palencia">Palencia</option>
+                    <option value="Pontevedra">Pontevedra</option>
+                    <option value="Salamanca">Salamanca</option>
+                    <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                    <option value="Segovia">Segovia</option>
+                    <option value="Sevilla">Sevilla</option>
+                    <option value="Soria">Soria</option>
+                    <option value="Tarragona">Tarragona</option>
+                    <option value="Teruel">Teruel</option>
+                    <option value="Toledo">Toledo</option>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Valladolid">Valladolid</option>
+                    <option value="Vizcaya">Vizcaya</option>
+                    <option value="Zamora">Zamora</option>
+                    <option value="Zaragoza">Zaragoza</option>
+                </select>
+            </div>
+            <div id="lugar-no-container" style="display:none;" class="form__input_div">
+                <!-- <label for="lugar_no">Lugar (fuera de España):</label> -->
+                <input type="text" name="lugar" id="lugar_no" class="form__input_lugar" placeholder="¿De dónde eres?">
+            </div>
+
+            <input type="hidden" name="lugar" id="lugar_hidden">
+
+            <div id="telefono-espana" style="display: none;" class="telefono-div">
+                <div style="display: flex;  width: 100%;">
+                    <span class="telefono-espana-span">+34</span>
+                    <input type="tel" id="telefono-es" class="form__input_lugar" placeholder="123 456 789"
+                        maxlength="9" style="border-radius: 0 5px 5px 0;">
+                </div>
+            </div>
+
+            <!-- Teléfono extranjero -->
+            <div id="telefono-extranjero" style="display: none;" class="form__input_div">
+                <input type="tel" id="telefono-ext" class="form__input_lugar" placeholder="+___ ..." maxlength="20">
+            </div>
+
+            <input type="hidden" name="telefono" id="telefono_final" value="">
+
+
             <input type="email" name="email" class="form__input" placeholder="Email:" required>
             <textarea class="form__input form__input--message" name="mensaje" placeholder="Mensaje"></textarea>
             <input type="submit" value="Enviar" class="form__cta">
         </div>
-    </form>    
+    </form>
+    {% if enviado %}
+        <div class="mensaje-agradecimiento" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+            Su mensaje se mando correctamente, ¡Gracias!
+        </div>
+    {% endif %}
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const si = document.getElementById('es_espana_si');
+    const no = document.getElementById('es_espana_no');
+    const contProv = document.getElementById('provincia-container');
+    const selProv = document.getElementById('provincia');
+    const contNo = document.getElementById('lugar-no-container');
+    const inpNo = document.getElementById('lugar_no');
+    const hiddenLugar = document.getElementById('lugar_hidden');
+    const contTelEs = document.getElementById('telefono-espana');
+    const inpTelEs = document.getElementById('telefono-es');
+    const contTelExt = document.getElementById('telefono-extranjero');
+    const inpTelExt = document.getElementById('telefono-ext');
+    const hiddenTelefono = document.getElementById('telefono_final');
+
+    function updateLugar() {
+        if (si.checked) {
+            hiddenLugar.value = selProv.value;
+        } else if (no.checked) {
+            hiddenLugar.value = inpNo.value.trim();
+        } else {
+            hiddenLugar.value = '';
+        }
+    }
+
+    function updateTelefono() {
+        if (si.checked) {
+            // Solo número sin prefijo porque el prefijo lo muestras fijo en HTML
+            hiddenTelefono.value = inpTelEs.value.trim();
+        } else if (no.checked) {
+            // Teléfono completo con prefijo extranjero
+            hiddenTelefono.value = inpTelExt.value.trim();
+        } else {
+            hiddenTelefono.value = '';
+        }
+    }
+
+    function toggleLugarTel() {
+        if (si.checked) {
+            contProv.style.display = 'block';
+            contNo.style.display = 'none';
+            contTelEs.style.display = 'block';
+            contTelExt.style.display = 'none';
+        } else if (no.checked) {
+            contProv.style.display = 'none';
+            contNo.style.display = 'block';
+            contTelEs.style.display = 'none';
+            contTelExt.style.display = 'block';
+        } else {
+            contProv.style.display = 'none';
+            contNo.style.display = 'none';
+            contTelEs.style.display = 'none';
+            contTelExt.style.display = 'none';
+        }
+        updateLugar();
+        updateTelefono();
+    }
+
+    si.addEventListener('change', toggleLugarTel);
+    no.addEventListener('change', toggleLugarTel);
+    selProv.addEventListener('change', updateLugar);
+    inpNo.addEventListener('input', updateLugar);
+    inpTelEs.addEventListener('input', updateTelefono);
+    inpTelExt.addEventListener('input', updateTelefono);
+
+    toggleLugarTel();  // Ejecuta al cargar para mostrar lo correcto
+});
+</script>
 {% endblock %}

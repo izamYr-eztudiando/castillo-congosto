@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 
 body {
-    /* height: 100vh; */
     background: #f8f5f0;
     margin: 0;
     display: flex;
@@ -14,64 +13,60 @@ body {
 
 .contenido {
     width: 100%;
-    /* height: 100vh; */
     flex-grow: 1;
     overflow-y: auto;
-    margin-bottom: 55%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
 }
 
 .datos-personales {
-    border: 2px solid navy;
+    border: none;
+    border-left: 5px solid #6d4c41;
+    padding-left: 16px;
     font-family: 'Merriweather', serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 2.8rem;
-    /* color: #5e412f; */
-    border-left: 3px solid #a1887f;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #3e2723;
+    background-color: #f1e9e1;
 }
 
 .mensaje {
-    /* display: flex; */
-    /* justify-content: center;
-    justify-self: center;
-    align-items: center; */
-    /* border: 2px solid black; */
-    /* Estilo para el mensaje */
-    /* height: 50%; */
-    /* background: #fdfaf6; */
-    /* border: 3px solid #a1887f; */
-    background: #fffdf8;
-    border: 2px dashed #d7b899;
-    border-radius: 20px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    margin: 20px auto;
+    background: #fffdfa;
+    border: 1px solid #c2a67f;
+    border-left: 6px solid #8d6e63;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 40px auto;
     width: 100%;
-    max-width: 90%;
-    font-family: 'Dancing Scripts', cursive;
-    font-size: 2.7rem;
-    line-height: 1.6;
+    max-width: 50%;
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
     color: #4e342e;
+    background-image: linear-gradient(to right, #fffdfa, #f7f3ec);
     text-align: left;
 }
 
 .boton-atras {
     display: flex;
     justify-self: center;
-    border: 1px solid salmon;
-    border-radius: 20px;
-    background: orangered;
+    background-color: #bf360c;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
     color: white;
-    font-size: 22px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
     cursor: pointer;
-    transition: 0.5s;
-    font-size: 2.5rem;
 }
 
 .boton-atras:hover {
-    font-size: 2.6rem;
-    transition: 0.5s;
+    background-color: #e64a19;
+    transform: scale(1.05);
 }
 
 @media (max-width:860px) {

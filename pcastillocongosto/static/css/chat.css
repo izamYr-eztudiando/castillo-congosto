@@ -1,11 +1,10 @@
 body {
-    background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%);
+    /* background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%); */
+    /* background: #a5b5d8; */
+    background: #dbcadd;
     height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .tabla-responsive {
@@ -20,13 +19,21 @@ body {
     min-width: 860px;
     width: 100%;
     border-collapse: collapse;
-    /* display: flex;
+}
+
+.acciones {
+    display: flex;
     justify-content: center;
-    align-items: center; */
 }
 
 .boton-accion {
     text-decoration: none;
+}
+
+.boton-accion.eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .num-mensajes {
@@ -34,8 +41,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
-    /* border: 2px solid lawngreen; */
 }
 
 .num-mensajes1 {
@@ -43,7 +48,6 @@ body {
 }
 
 .num-mensajes2 {
-    /* border: 4px solid blue; */
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -88,13 +92,28 @@ table {
 
 th, td {
     border: 0.5px solid black;
-    /* margin: 0; */
-    /* padding: 0; */
     padding: 1px;
     text-align: center;
     white-space: nowrap;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-right: 5%;
+}
+
+.boton-cerrar-sesion {
+    background: none;
+    border: 1px solid #5a3826;
+    color: #5a3826;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
 
 @media (max-width:430px) {
     .chat {
@@ -112,5 +131,11 @@ th, td {
 
     .num-mensajes-text {
         font-size: 14px;
+    }
+}
+
+@media (max-width:375px) {
+    .chat { 
+        margin-bottom: 15%;
     }
 }

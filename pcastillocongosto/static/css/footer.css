@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
 .footer {
-    /* background: #5a3826; Color oscuro elegante */
-    /* background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%); */
-    /* background: #a5b5d8; */
-
     background: #8eaae5;
-    /* padding: 20px 0; */
     padding: 0;
     text-align: center;
     position: fixed;
@@ -16,7 +11,6 @@
 }
 
 ul {
-    /* margin-left: 5rem; */
     list-style: none;
     display: flex;
 }
@@ -35,12 +29,6 @@ li {
     justify-content: center;
 }
 
-/* Logo del footer */
-/* .footer-logo img {
-    height: 48px;
-    width: 48px;
-} */
-
 /* Enlaces a la política del castillo */
 .political-links {
     width: 100%;
@@ -50,24 +38,16 @@ li {
     margin: auto;
 }
 
-.political-link-list {
-    /* border: 2px solid white; */
-}
-
 /* estilo enlace */
 .political-link {
     text-decoration: none;
     font-size: 1.2rem;
-    /* font-style: italic; */
     color: rgb(255, 255, 255);
     transition: 0.3s;
 }
 
 .political-link:hover {
     text-decoration: underline;
-    /* color: navy; */
-    /* font-weight: bold; */
-    /* font-size: 1.3rem; */
 }
 
 /* Iconos de las redes sociales */
@@ -76,7 +56,6 @@ li {
     width: 100%;
     max-width: 150px;
     display: flex;
-    /* gap: 10px; */
     flex-direction: column;
 }
 /* posicion de iconos */
@@ -89,7 +68,7 @@ li {
 /* estilo del título */
 .social-icons h4 {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #fff;
     text-transform: capitalize;
     margin-bottom: 12px;
@@ -98,19 +77,6 @@ li {
     animation: colorCycle 4s infinite linear;
 }
 
-/* estilo de cada icono social
-.social-icon img {
-    transition: 0.3s;
-    cursor: pointer;
-    transform: height 2s, width 2s;
-}
-efecto al pasar el ratón sobre los iconos
-.social-icon img:hover {
-    transform: scale(1.1);
-    height: 50px;
-    width: 50px;
-    transform: height 2s, width 2s;
-} */
 /* estilo de los svg de cada icono social */
 .social-icon svg {
     transition: 0.3s;
@@ -211,6 +177,9 @@ efecto al pasar el ratón sobre los iconos
 }
 
 /* RESPONSIVE */
+
+
+
 /* Tablet en general */
 @media (max-width: 860px) {
     .footer {
@@ -238,6 +207,55 @@ efecto al pasar el ratón sobre los iconos
         transform: height 2s, width 2s;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height:430px) and (max-width:956px) {
+    .footer {
+        height: 100px;
+        position: relative;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .political-links {
+        justify-content: left;
+    }
+    
+    .political-link {
+        font-size: 1.4rem;
+    }
+
+    .social-icons h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height:430px) and (max-width: 812px) {
+    .footer {
+        height: 90px;
+        position: relative;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .political-links {
+        justify-content: left;
+    }
+
+}
+
+
 /* Móvil grande */
 @media (max-width:430px) {
     .footer {
@@ -258,7 +276,7 @@ efecto al pasar el ratón sobre los iconos
 /* Móvil mediano */
 @media (max-width:375px) {
     .footer {
-        height: 150px;
+        height: 120px;
     }
 
     .political-link:hover {

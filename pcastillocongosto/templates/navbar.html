@@ -16,14 +16,14 @@
         </div>
         <!-- Menú de navegación -->
         <ul class="navbar-menu">
-            {% if not request.user.is_authenticated %}
+            <!-- {% if not request.user.is_authenticated %} -->
                 <li><a href="{% url 'home' %}">Inicio</a></li>
                 <li><a href="{% url 'historia' %}">Historia</a></li>
                 <li><a href="{% url 'servicios' %}">Servicios</a></li>
                 <li><a href="{% url 'dossier' %}">Dossier</a></li>
                 <li><a href="{% url 'ubicacion' %}">Ubicación</a></li>
                 <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            {% endif %}
+            <!-- {% endif %} -->
         </ul>
         <!-- Botón Hamburguesa -->
         <!-- <div class="toggle_btn">

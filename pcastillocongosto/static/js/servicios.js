@@ -1,21 +1,29 @@
-document.querySelectorAll('.lista-servicios a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const imgSrc = this.dataset.img;
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
+document.addEventListener("DOMContentLoaded", function () {
+    const tarjetas = document.querySelectorAll(".tarjeta-servicio");
+    const modal = document.getElementById("modal-servicio");
+    const modalImg = document.getElementById("modal-img-servicio");
+    const close = document.querySelector(".close-servicio");
 
-        modal.style.display = "flex";
-        modalImg.src = imgSrc;
+    tarjetas.forEach(tarjeta => {
+        tarjeta.addEventListener("click", function () {
+            console.log("Click en la tarjeta:", this)
+            const imgSrc = this.getAttribute("data-img");
+            if (imgSrc) {
+                modal.style.display = "block";   // Mostrar modal
+                modalImg.src = imgSrc;            // Cambiar la imagen
+            }
+        });
     });
-});
 
-document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('modal').style.display = "none";
-});
+    close.addEventListener("click", function () {
+        modal.style.display = "none";           // Ocultar modal al cerrar
+        modalImg.src = "";
+    });
 
-document.getElementById('modal').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) {
-        e.currentTarget.style.display = "none"
-    }
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";       // Ocultar si haces click fuera
+            modalImg.src = "";
+        }
+    });
 });

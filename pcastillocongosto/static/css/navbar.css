@@ -1,8 +1,6 @@
 /* BARRA DE NAVEGACIÓN */
 /* Estilos generales del navbar */
 .navbar {
-    /* background: linear-gradient(90deg, #8B5E3C 0%, #C19A6B 100%); */
-    /* background: #a5b5d8; */
     background: #8eaae5;
     padding: 10px 0;
     width: 100%;
@@ -63,13 +61,6 @@
     cursor: pointer;
     display: none;
 }
-
-/* .toggle_btn {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
  */
 .icon {
   position: relative;
@@ -106,11 +97,9 @@
     height: 100vh;
     background-color: #12134c;
     overflow-x: hidden;
-    /* transition: width 0.4s ease; */
     z-index: 999;
     padding: 2rem 1rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    /* transition: height 1.5s ease, opacity 1.4s ease; */
 }
 /* estilo de cada lista del dropdown */
 .dropdown_menu li {
@@ -125,7 +114,6 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 17px;
-    /* display: block; */
     display: flex;
     text-align: center;
     width: 100%;
@@ -143,7 +131,6 @@
 /* animación al abrir */
 .dropdown_menu.animated {
     animation: menuOpen 0.5s forwards linear;
-    /* transition: height 2.5s ease, opacity 1.4s ease; */
 }
 /* animación al cerrar */
 .dropdown_menu.closing {
@@ -207,6 +194,13 @@
     color: #990f0f;
 }
 
+
+@media (min-width:861px) {
+    .toggle_btn {
+        display: none;
+    }
+}
+
 /* RESPONSIVE */
 @media(max-width:860px) {
     .navbar-menu {
@@ -226,11 +220,77 @@
     }
 }
 
-@media (min-width:861px) {
-    .toggle_btn {
-        display: none;
+@media screen and (orientation: landscape) and (max-height:430px) and (max-width:956px) {
+    .dropdown_menu {
+        width: 97.8%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 4rem;
+        align-content: start;
+        height: auto;
+        padding: 0.5rem;
+        gap: 0.3rem;
+        justify-content: center;
+    }
+
+    .dropdown_menu li:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 0.2rem;
+    }
+
+    .dropdown_menu li:not(:first-child) {
+        display: grid;
+    }
+
+    .dropdown_menu li {
+        margin: 0 auto;
+    }
+
+    .dropdown_menu a {
+        font-size: 1.5rem;
+    }
+
+    .dropdown_menu p {
+        font-size: 1.6rem;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height:430px) and (max-width: 812px) {   
+    .dropdown_menu {
+        width: 97.8%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 4rem;
+        align-content: start;
+        height: auto;
+        padding: 0.5rem;
+        gap: 0.3rem;
+        justify-content: center;
+    }
+
+    .dropdown_menu li:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 0.2rem;
+    }
+
+    .dropdown_menu li:not(:first-child) {
+        display: grid;
+    }
+
+    .dropdown_menu li {
+        margin: 0 auto;
+    }
+
+    .dropdown_menu a {
+        font-size: 1.3rem;
+    }
+
+    .dropdown_menu p {
+        font-size: 1.4rem;
+    }
+}
+
+
 @media (max-width:430px) {
     .dropdown_menu {
         width: 92.5%;

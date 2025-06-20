@@ -1,42 +1,206 @@
+/* ---------- HERO VIDEO ---------- */
 body {
-    /* background: linear-gradient(180deg, #F5E0C3 0%, #D2B48C 100%); */
-    /* background: #8eaae5; */
-    background: #a5b5d8;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* flex-direction: column; */
-    margin: 0;
+    background: linear-gradient(180deg, #f7f2f4 0%, #f1e6ea 40%, #ede0e7 100%);
+    font-family: 'Merriweather', serif;
+}
+
+.hero-video {
+    position: relative;
     width: 100%;
-    height: 100vw;
-    overflow-y: auto;
+    height: 70vh;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 5%;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2;
+    color: #fff;
 }
 
-
-.home {
-    border: 2px solid wheat;
+.hero-text h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 0 0 .6rem;
 }
 
-.reference {
-    border: 2px solid green;
+.hero-text p {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    margin: 0;
 }
 
-@media (max-width:860px) {
-    
+/* ---------- GALERÍA ---------- */
+.galeria-inicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
 }
 
-@media (max-width:430px) {
-    p {
-        margin-top: 30%;
+.galeria-inicio img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+}
+
+/* ---------- NOTICIA DESTACADA ---------- */
+.noticia-destacada {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    max-width: 1000px;
+    margin: 60px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.noticia-img {
+    flex: 1 1 300px;
+}
+
+.noticia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.noticia-info {
+    flex: 2 1 400px;
+    padding: 30px;
+    background: #faf3ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.noticia-info h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    color: #5d4037;
+}
+
+.noticia-info p {
+    margin: 0 0 1.2rem;
+    color: #4e342e;
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+.btn-leer {
+    align-self: flex-start;
+    background: #8d6e63;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+.btn-leer:hover {
+    background: #5d4037;
+}
+
+/* Masonry */
+.masonry {
+    column-count: 3;
+    /* ≈ tres columnas en desktop */
+    column-gap: 1.2rem;
+    padding: 2.5rem 1.2rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.brick {
+    break-inside: avoid;
+    /* evita corte de bloques */
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+}
+
+.brick img {
+    width: 100%;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.brick:hover img {
+    transform: scale(1.05);
+}
+
+@media screen and (orientation: landscape) and (max-height:430px) and (max-width: 812px) {
+    .hero-video {
+        margin-top: 10%;
     }
 }
 
-@media (max-width:375px) {
-
+@media screen and (orientation: landscape) and (max-height:375px) and (max-width: 812px) {
+    .hero-video {
+        margin-top: 11%;
+    }
 }
 
-@media (max-width:320px) {
-    .home {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .hero-video {
+        height: 60vh;
+    }
+
+    .noticia-destacada {
+        flex-direction: column;
+    }
+
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-video {
+        height: 55vh;
+    }
+
+    .galeria-inicio {
+        gap: 15px;
+        padding: 30px 15px;
+    }
+
+    .masonry {
+        column-count: 1;
+        margin-bottom: 15%;
+    }
+}
+
+@media (max-width: 375px) {
+    .masonry {
+        margin-bottom: 10%;
+    }
+}
+
+@media (max-width: 320px) {
+    .masonry {
+        margin-bottom: 20%;
     }
 }

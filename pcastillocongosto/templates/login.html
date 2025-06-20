@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  <div class="login-box">
+    <h2>Iniciar sesión</h2>
+    <form method="post">
+      {% csrf_token %}
+      {% if form.errors %}
+        <p style="color:red; text-align:center;">Usuario o contraseña incorrectos.</p>
+      {% endif %}
+      <input type="text" name="username" placeholder="Usuario" required autofocus>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

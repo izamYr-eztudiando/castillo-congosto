@@ -43,7 +43,12 @@ CSRF_TRUSTED_ORIGINS = [
     'https://racks-graph-acquired-nhs.trycloudflare.com',
     'https://cloudy-scotia-substantial-workflow.trycloudflare.com',
     'https://mill-arkansas-bureau-tourism.trycloudflare.com',
+    'https://racing-edit-agents-glen.trycloudflare.com',
 ]
+
+# LOGOUT_REDIRECT_URL = 'home'
+
+# LOGOUT_URL = '/logout/'
 
 ROOT_URLCONF = 'pcastillocongosto.urls'
 
