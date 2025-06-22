@@ -1,9 +1,6 @@
 {% extends "base2.html" %}
 {% load static %}
 {% block head %}
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-  crossorigin="anonymous"> -->
 <link rel="stylesheet" href="{% static 'css/dossier.css' %}">
   <title>{% block title %} Dossier PDF {% endblock %}</title>
 {% endblock %}
@@ -11,12 +8,8 @@
 {% block content %}
 <br><br><br><br>
 <div class="dossier-div">
-     <!-- <button type="submit">Descargar Dossier</button> -->
      <a class="dossier-btn" href="{% static 'dossier.pdf' %}" download="Dossier" onclick="mostrarMensaje()">Descargar Dossier</a>
      <p id="mensaje-descarga" style="display: none;" class="mensaje-descarga">¡Gracias por descargar!</p><br>
-     <!-- <p>SOMOS NOTICIA EN MARCA-> <a href="https://www.marca.com/tiramillas/2025/02/14/67af2389ca4741a1218b4584.html" target="_blank">enlace</a></p> -->
-     <!-- <embed class="dossier" src="{% static 'dossier.pdf' %}" type="application/pdf" width="476px" height="600px"/> -->
-
      <div class="dossier-gallery-mobile-only-horizontal">
   <div class="scroll-container">
     <img src="{% static 'dossier-castillo/dossier_page-0001.jpg' %}">
@@ -36,56 +29,5 @@
   </div>
 </div>
 </div>
-<!-- <div class="dossier-gallery-mobile-only-vertical">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-0.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-1.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-2.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-3.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-4.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-5.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-6.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-7.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-8.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-9.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-10.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-11.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-12.jpg' %}">
-    <img src="{% static 'dossier/Dossier-Palacio-Carrascalino_Bodas_25-im+ígenes-13.jpg' %}">
-</div> -->
-
-<!-- <div class="dossier-gallery-mobile-only-horizontal">
-  <div class="scroll-container">
-    <img src="{% static 'dossier-castillo/dossier_page-0001.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0002.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0003.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0004.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0005.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0006.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0007.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0008.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0009.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0010.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0011.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0012.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0013.jpg' %}">
-    <img src="{% static 'dossier-castillo/dossier_page-0014.jpg' %}">
-  </div>
-</div> -->
-<script src="{% static 'js/dossier.js' %}">function mostrarMensaje() {
-  const mensaje = document.getElementById('mensaje-descarga');
-  mensaje.style.display = 'block';
-  mensaje.style.opacity = 0;
-  mensaje.style.transition = 'opacity 0.6s ease';
-
-  setTimeout(() => {
-      mensaje.style.opacity = 1;
-  }, 10);
-
-  setTimeout(() => {
-      mensaje.style.opacity = 0;
-      setTimeout(() => {
-          mensaje.style.display = 'none';
-      }, 600);
-  }, 3000)
-}</script>
+<script src="{% static 'js/dossier.js' %}"></script>
 {% endblock %}

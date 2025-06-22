@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, re_path
 from django.urls import reverse_lazy
 from appcastillocongosto import views
 from appcastillocongosto.views import *
-
-from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-from django.contrib.auth.decorators import login_required
 
-from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,9 +24,5 @@ urlpatterns = [
     re_path(r'^(?P<id>\d+)/ver_mensaje$', views.ver_mensaje, name='ver_mensaje'),
     re_path(r'^(?P<id>\d+)/ver_contacto$', views.ver_contacto, name='ver_contacto'),
     re_path(r'^(?P<id>\d+)/eliminar_contacto$', views.eliminar_contacto, name='eliminar_contacto'),
-    re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces
-    # path('resenas/', views.resenas, name='resenas'),
-    
+    re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces    
 ]
-
-#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

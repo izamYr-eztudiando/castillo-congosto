@@ -13,5 +13,5 @@ function mostrarMensaje() {
         setTimeout(() => {
             mensaje.style.display = 'none';
         }, 600);
-    }, 4000)
+    }, 3000)
 }

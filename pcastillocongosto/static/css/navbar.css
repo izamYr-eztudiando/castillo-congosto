@@ -61,7 +61,7 @@
     cursor: pointer;
     display: none;
 }
- */
+
 .icon {
   position: relative;
   top: 0;
@@ -90,6 +90,7 @@
 
 /* dropdown menu sidebar */
 .dropdown_menu {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;

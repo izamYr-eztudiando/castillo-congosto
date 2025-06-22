@@ -1,15 +1,12 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, get_object_or_404
 from appcastillocongosto.models import *
-from django.http import HttpResponse
 
 #Login
 from django.contrib.auth.decorators import login_required
 
 # Paginación
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-#User
 
 # Create your views here.
 DEBUG = True
@@ -41,6 +38,14 @@ def ubicacion(request):
     context = {}
     return render(request, 'ubicacion.html', context=context)
 
+def historia(request):
+    context = {}
+    return render(request, 'historia.html', context=context)
+
+def autor(request):
+    context = {}
+    return render (request, 'autor.html', context=context)
+
 def contacto(request):
     enviado = False
     if request.method == 'POST':
@@ -53,12 +58,8 @@ def contacto(request):
         contacto = Contacto(nombre=nombre, apellidos=apellidos, lugar=lugar, telefono=telefono, email=email, mensaje=mensaje)
         contacto.save()
         enviado = True
-        # return redirect('chat')
     return render(request, 'contacto.html', {'enviado': enviado})
 
-def historia(request):
-    context = {}
-    return render(request, 'historia.html', context=context)
 
 def servicios(request):
     servicios = [
@@ -99,7 +100,6 @@ def chat(request):
         pagina = request.session["pagina"]
         print(" page recibe en POST= " +str(pagina))
 
-    # condición muy importante para saber si existe la varible en la sesión
     if "pagina" in request.session:
         page = request.session["pagina"]
         print(" page recibe de sesion=" +str(page))
@@ -116,7 +116,6 @@ def chat(request):
     context = {'lista_contactos': lista_contactos, 'numleidos': numleidos, 'numcontestados': numcontestados, 'numcontactos': numcontactos}
     return render(request, 'chat.html', context=context)
  
-@login_required(login_url='login')
 def ver_contacto(request, id):
     contacto = get_object_or_404(Contacto, id=id)
     contacto.contestado = True
@@ -132,7 +131,6 @@ def ver_contacto(request, id):
 
     return redirect(f"https://wa.me/{numero_completo}")
 
-@login_required(login_url='login')
 def eliminar_contacto(request, id):
     if request.method == 'POST':
         contacto = get_object_or_404(Contacto, id=id)
@@ -148,14 +146,6 @@ def ver_mensaje(request, id):
     context = {'contacto': contacto}
     return render (request, 'ver_mensaje.html', context=context)
 
-# def resenas(request):
-#     context = {}
-#     return render(request, 'resenas.html', context=context)
-
 def prueba(request):
     context = {}
     return render (request, 'prueba.html', context=context)
-
-def autor(request):
-    context = {}
-    return render (request, 'autor.html', context=context)

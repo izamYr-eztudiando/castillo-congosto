@@ -1,34 +1,30 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
 {% block content %}
 <nav class="navbar">
     <div class="navbar-container">
-        <!-- Logo -->
-        <!-- <a href="/" class="navbar-logo">
-            <img id="logo-expandible" data-img="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" height="48" width="48" alt="Logo">
-        </a> -->
         <div class="navbar-logo" style="cursor: pointer;">
-            <img data-img="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" alt="Logotipo del Castillo" id="logo-expandible" height="48" width="48">
+            <img data-img="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}"
+                src="{% static 'images/Logo-Castillo-Puente-del-Congosto-hd.png' %}" alt="Logotipo del Castillo"
+                id="logo-expandible" height="48" width="48">
         </div>
         <!-- Menú de navegación -->
         <ul class="navbar-menu">
             <!-- {% if not request.user.is_authenticated %} -->
-                <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'historia' %}">Historia</a></li>
-                <li><a href="{% url 'servicios' %}">Servicios</a></li>
-                <li><a href="{% url 'dossier' %}">Dossier</a></li>
-                <li><a href="{% url 'ubicacion' %}">Ubicación</a></li>
-                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'historia' %}">Historia</a></li>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="{% url 'dossier' %}">Dossier</a></li>
+            <li><a href="{% url 'ubicacion' %}">Ubicación</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <!-- {% endif %} -->
         </ul>
-        <!-- Botón Hamburguesa -->
-        <!-- <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
-        </div> -->
         <div class="toggle_btn">
             <i class="fa-solid fa-bars icon icon-bars"></i>
             <i class="fa-solid fa-xmark icon icon-xmark"></i>
@@ -36,7 +32,9 @@
     </div>
 </nav>
 <div class="dropdown_menu">
-    <li><p>Menú</p></li>
+    <li>
+        <p>Menú</p>
+    </li>
     <li><a href="{% url 'home' %}">Inicio</a></li>
     <li><a href="{% url 'historia' %}">Historia</a></li>
     <li><a href="{% url 'servicios' %}">Servicios</a></li>

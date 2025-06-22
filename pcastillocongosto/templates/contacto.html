@@ -1,9 +1,6 @@
 {% extends "base2.html" %}
 {% load static %}
 {% block head %}
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-  crossorigin="anonymous"> -->
 <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
 <title>{% block title %}Contacto{% endblock %}</title>
 {% endblock %}
@@ -25,7 +22,6 @@
             <h2 class="form_title">Rellene este formulario</h2>
             <input type="text" name="nombre" class="form__input" placeholder="Nombre:" required>
             <input type="text" name="apellidos" class="form__input" placeholder="Apellidos:">
-            <!-- <input type="text" name="lugar" class="form__input" placeholder="Lugar:"> -->
             <p class="texto-p">¿Eres de España?</p>
             <div class="espana-radio">
                 <label>
@@ -92,7 +88,6 @@
                 </select>
             </div>
             <div id="lugar-no-container" style="display:none;" class="form__input_div">
-                <!-- <label for="lugar_no">Lugar (fuera de España):</label> -->
                 <input type="text" name="lugar" id="lugar_no" class="form__input_lugar" placeholder="¿De dónde eres?">
             </div>
 
@@ -105,7 +100,6 @@
                         maxlength="9" style="border-radius: 0 5px 5px 0;">
                 </div>
             </div>
-
             <!-- Teléfono extranjero -->
             <div id="telefono-extranjero" style="display: none;" class="form__input_div">
                 <input type="tel" id="telefono-ext" class="form__input_lugar" placeholder="+___ ..." maxlength="20">
@@ -125,72 +119,5 @@
         </div>
     {% endif %}
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const si = document.getElementById('es_espana_si');
-    const no = document.getElementById('es_espana_no');
-    const contProv = document.getElementById('provincia-container');
-    const selProv = document.getElementById('provincia');
-    const contNo = document.getElementById('lugar-no-container');
-    const inpNo = document.getElementById('lugar_no');
-    const hiddenLugar = document.getElementById('lugar_hidden');
-    const contTelEs = document.getElementById('telefono-espana');
-    const inpTelEs = document.getElementById('telefono-es');
-    const contTelExt = document.getElementById('telefono-extranjero');
-    const inpTelExt = document.getElementById('telefono-ext');
-    const hiddenTelefono = document.getElementById('telefono_final');
-
-    function updateLugar() {
-        if (si.checked) {
-            hiddenLugar.value = selProv.value;
-        } else if (no.checked) {
-            hiddenLugar.value = inpNo.value.trim();
-        } else {
-            hiddenLugar.value = '';
-        }
-    }
-
-    function updateTelefono() {
-        if (si.checked) {
-            // Solo número sin prefijo porque el prefijo lo muestras fijo en HTML
-            hiddenTelefono.value = inpTelEs.value.trim();
-        } else if (no.checked) {
-            // Teléfono completo con prefijo extranjero
-            hiddenTelefono.value = inpTelExt.value.trim();
-        } else {
-            hiddenTelefono.value = '';
-        }
-    }
-
-    function toggleLugarTel() {
-        if (si.checked) {
-            contProv.style.display = 'block';
-            contNo.style.display = 'none';
-            contTelEs.style.display = 'block';
-            contTelExt.style.display = 'none';
-        } else if (no.checked) {
-            contProv.style.display = 'none';
-            contNo.style.display = 'block';
-            contTelEs.style.display = 'none';
-            contTelExt.style.display = 'block';
-        } else {
-            contProv.style.display = 'none';
-            contNo.style.display = 'none';
-            contTelEs.style.display = 'none';
-            contTelExt.style.display = 'none';
-        }
-        updateLugar();
-        updateTelefono();
-    }
-
-    si.addEventListener('change', toggleLugarTel);
-    no.addEventListener('change', toggleLugarTel);
-    selProv.addEventListener('change', updateLugar);
-    inpNo.addEventListener('input', updateLugar);
-    inpTelEs.addEventListener('input', updateTelefono);
-    inpTelExt.addEventListener('input', updateTelefono);
-
-    toggleLugarTel();  // Ejecuta al cargar para mostrar lo correcto
-});
-</script>
+<script src="{% static 'js/contacto.js' %}"></script>
 {% endblock %}

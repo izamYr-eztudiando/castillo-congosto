@@ -37,47 +37,36 @@ document.addEventListener("DOMContentLoaded", function () {
         const isMobile = window.innerWidth <= 860;
 
         if (!isMobile) {
-            // dropDownMenu.classList.remove('open', 'animated');
-            dropDownMenu.classList.remove('animated', 'closing')
-            // dropDownMenu.style.display = 'none';
+            dropDownMenu.style.display = 'none';
+            dropDownMenu.classList.remove('animated', 'closing');
             dropDownMenu.style.opacity = 0;
-            dropDownMenu.style.visibility = 'hidden'
-            // toggleBtnIcon.className = 'fa-solid fa-bars';
+            dropDownMenu.style.visibility = 'hidden';
             return;
         }
 
         if (isFirstLoad) {
+            dropDownMenu.style.display = 'none';
             dropDownMenu.classList.remove('animated', 'closing');
             dropDownMenu.style.opacity = 0;
             dropDownMenu.style.visibility = 'hidden';
             isFirstLoad = false;
-            return
-        }
-
-        if (hasInteracted) {
-            dropDownMenu.classList.add('animated');
+            return;
         }
 
         if (isOpen) {
-            // dropDownMenu.classList.add('open');
+            dropDownMenu.style.display = 'block';
             dropDownMenu.classList.add('animated');
-            // dropDownMenu.style.display = 'block';
             dropDownMenu.style.opacity = 1;
             dropDownMenu.style.visibility = 'visible';
-            // toggleBtnIcon.className = 'fa-solid fa-xmark';
         } else {
-            // dropDownMenu.classList.remove('open');
             dropDownMenu.classList.remove('animated');
             dropDownMenu.classList.add('closing');
-            // dropDownMenu.style.display = 'none';
-            // dropDownMenu.style.opacity = 0;
             setTimeout(() => {
                 dropDownMenu.classList.remove('closing');
+                dropDownMenu.style.display = 'none';
                 dropDownMenu.style.opacity = 0;
                 dropDownMenu.style.visibility = 'hidden';
-            }, 500)
-            // dropDownMenu.style.visibility = 'hidden';
-            // toggleBtnIcon.className = 'fa-solid fa-bars';
+            }, 500);
         }
     }
 
