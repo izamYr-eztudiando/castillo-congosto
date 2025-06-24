@@ -149,3 +149,8 @@ def ver_mensaje(request, id):
 def prueba(request):
     context = {}
     return render (request, 'prueba.html', context=context)
+
+@login_required(login_url='login')
+def imagen(request):
+    context = {}
+    return render (request, 'imagen.html', context=context)

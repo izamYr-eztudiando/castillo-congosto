@@ -17,6 +17,7 @@ urlpatterns = [
     path('historia/', views.historia, name='historia'),
     path('servicios/', views.servicios, name='servicios'),
     path('chat/', views.chat, name='chat'),
+    path('imagen/', views.imagen, name='imagen'),
     path('prueba/', views.prueba, name='prueba'),
     path('autor/', views.autor, name='autor'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
@@ -24,5 +25,5 @@ urlpatterns = [
     re_path(r'^(?P<id>\d+)/ver_mensaje$', views.ver_mensaje, name='ver_mensaje'),
     re_path(r'^(?P<id>\d+)/ver_contacto$', views.ver_contacto, name='ver_contacto'),
     re_path(r'^(?P<id>\d+)/eliminar_contacto$', views.eliminar_contacto, name='eliminar_contacto'),
-    re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces    
+    re_path('', views.home, name='home'), # siempre ultimo el re_path ya que choca con otros enlaces
 ]
