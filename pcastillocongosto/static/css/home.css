@@ -120,6 +120,14 @@ body {
     background: #5d4037;
 }
 
+.seccion-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  letter-spacing: 1px;
+}
+
 /* Masonry */
 .masonry {
     column-count: 3;
@@ -129,6 +137,15 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 5%;
+}
+
+.masonry .brick {
+  /* margin-bottom: 1em; */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .brick {
@@ -148,6 +165,22 @@ body {
 
 .brick:hover img {
     transform: scale(1.05);
+}
+
+.info-publicacion {
+  padding: 0.5em 1em;
+}
+
+.info-publicacion h4 {
+  margin: 0.3em 0;
+  font-size: 1.1em;
+  color: #222;
+}
+
+.info-publicacion p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
 }
 
 @media screen and (orientation: landscape) and (max-height:430px) and (max-width: 812px) {

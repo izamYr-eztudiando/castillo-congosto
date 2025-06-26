@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, get_object_or_404
 from appcastillocongosto.models import *
-
+from django.http import HttpResponse
 #Login
 from django.contrib.auth.decorators import login_required
 
@@ -13,6 +13,7 @@ DEBUG = True
 
 def home(request):
     print("Estamos en hombre " +str(DEBUG))
+    lista_imagenes = Imagen.objects.all().order_by('id')
     imagenes_masonry = [
         'images/castillo-interno-atardecer.jpg',
         'images/castillo-interno-dia.jpg',
@@ -24,7 +25,7 @@ def home(request):
         'images/castillo-google-maps2.png',
         'images/Castillo_puente_del_congosto.jpg',
     ]
-    return render(request, 'home.html', {'imagenes_masonry': imagenes_masonry})
+    return render(request, 'home.html', {'imagenes_masonry': imagenes_masonry, 'lista_imagenes': lista_imagenes})
 
 def navbar(request):
     context = {}
@@ -146,11 +147,32 @@ def ver_mensaje(request, id):
     context = {'contacto': contacto}
     return render (request, 'ver_mensaje.html', context=context)
 
+@login_required(login_url='login')
+def lista_imagenes(request):
+    lista_imagenes = Imagen.objects.all().order_by('-fecha_creacion')
+    return render (request, 'lista_imagenes.html', {'lista_imagenes':lista_imagenes})
+
+def subir_imagen(request):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descripcion = request.POST.get('descripcion')
+        imagen = request.FILES.get('imagen')
+
+        if imagen:
+            evento = Imagen.objects.create(titulo=titulo, descripcion=descripcion, imagen=imagen)
+            evento.save()
+            return redirect('lista_imagenes')
+        else:
+            return HttpResponse("Error: El título y el contenido son obligatorios.")
+    
+    return render (request, 'subir_imagen.html')
+
+def eliminar_imagen(request, id):
+    if request.method == 'POST':
+        publicacion = get_object_or_404(Imagen, id=id)
+        publicacion.delete()
+    return redirect('lista_imagenes')
+
 def prueba(request):
     context = {}
     return render (request, 'prueba.html', context=context)
-
-@login_required(login_url='login')
-def imagen(request):
-    context = {}
-    return render (request, 'imagen.html', context=context)

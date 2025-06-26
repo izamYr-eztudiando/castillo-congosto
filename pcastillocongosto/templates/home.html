@@ -63,4 +63,25 @@
     </div>
     {% endfor %}
 </section>
+
+<h2 class="seccion-titulo">PUBLICACIONES</h2>
+
+<section class="masonry">
+  {% for publicacion in lista_imagenes %}
+    <div class="brick">
+      {% if publicacion.imagen %}
+        <img src="{{ publicacion.imagen.url }}" alt="Publicación número {{ publicacion.id }}, Titulo: {{ publicacion.titulo }}" loading="lazy">
+      {% else %}
+        <div class="no-image">Sin imagen</div>
+      {% endif %}
+      <div class="info-publicacion">
+        <h4>{{ publicacion.titulo }}</h4>
+        <p>{{ publicacion.descripcion|truncatewords:15 }}</p>
+      </div>
+    </div>
+  {% empty %}
+    <p>No hay publicaciones disponibles.</p>
+  {% endfor %}
+</section>
+
 {% endblock %}

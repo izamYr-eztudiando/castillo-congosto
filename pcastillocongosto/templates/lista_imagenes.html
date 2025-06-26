@@ -1,0 +1,42 @@
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/lista_imagenes.css' %}">
+<title>{% block title %}Imágenes publicadas{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
+<div class="contenedor-admin">
+    <div class="header-admin">
+        <h1>📸 Imágenes subidas</h1>
+        <a href="{% url 'subir_imagen' %}" class="boton-subir">+ Subir nueva imagen</a>
+    </div>
+
+    <div class="galeria-admin">
+        {% for imagen in lista_imagenes %}
+            <div class="card-imagen">
+                {% if imagen.imagen %}
+                    <img src="{{ imagen.imagen.url }}" alt="{{ imagen.titulo }}">
+                    <p>Ruta de Imagen:{{ imagen.imagen.url }}</p>
+                {% endif %}
+                <div class="contenido-imagen">
+                    <h3>{{ imagen.titulo }}</h3>
+                    <p>{{ imagen.descripcion }}</p>
+                    <span class="fecha-publicacion">📅 {{ imagen.fecha_creacion|date:"d M Y H:i" }}</span>
+                </div>
+                <div class="acciones-imagen">
+                    <a href="{% url 'eliminar_imagen' imagen.id %}" onclick="return confirm('¿Estás seguro de que quieres eliminar esta imagen?');" class="boton-eliminar">🗑️ Eliminar</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay imágenes publicadas todavía.</p>
+        {% endfor %}
+    </div>
+
+    {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}" class="form-logout">
+            {% csrf_token %}
+            <button type="submit" class="boton-cerrar-sesion">Cerrar sesión</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
