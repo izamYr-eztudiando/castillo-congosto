@@ -44,6 +44,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://cloudy-scotia-substantial-workflow.trycloudflare.com',
     'https://mill-arkansas-bureau-tourism.trycloudflare.com',
     'https://racing-edit-agents-glen.trycloudflare.com',
+    'https://folk-attack-alaska-publisher.trycloudflare.com'
 ]
 
 # LOGOUT_REDIRECT_URL = 'home'
@@ -74,6 +75,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'castillo_db',
+        'USER': 'admin',
+        'PASSWORD': 'Adivinala1.',
+        'HOST': 'localhost',
+        'PORT': '8000',
     }
 }
 

@@ -24,6 +24,9 @@ def home(request):
         'images/castillo-lado2.jpg',
         'images/castillo-google-maps2.png',
         'images/Castillo_puente_del_congosto.jpg',
+        'images/pared-castillo-noche.jpeg',
+        'images/castillo-vista-dron-noche.jpeg',
+        'images/castillo-pared-dia.jpeg',
     ]
     return render(request, 'home.html', {'imagenes_masonry': imagenes_masonry, 'lista_imagenes': lista_imagenes})
 
