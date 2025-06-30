@@ -13,7 +13,7 @@ class Contacto(models.Model):
     nombre = models.CharField("Nombre", max_length=25, null=True)
     apellidos = models.CharField("Apellidos", max_length=100, null=True, blank=True)
     email = models.CharField("Email", max_length=100, null=True, blank=True)
-    telefono = models.CharField("Telefono", max_length=9, null=True, blank=True)
+    telefono = models.CharField("Telefono", max_length=15, null=True, blank=True)
     lugar = models.CharField("Lugar", max_length=100, null=True, blank=True)
     fecha = models.DateTimeField("Fecha y Hora", default=timezone.now)
     mensaje = models.TextField("Mensaje")

@@ -7,24 +7,23 @@ body {
     align-items: center;
     margin: 0;
     min-height: 100vh;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    /* box-sizing: border-box; */
+    /* overflow-x: hidden; */
 }
 
 .form-contacto {
-    padding-top: 1%;
-    padding-bottom: 5.5%;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     width: max-content;
+    border: 2px solid silver;
 }
 
 .texto {
     display: block;
     text-align: center;
-    margin-bottom: 30px;
-    margin-left: 30px;
+    border: 2px solid gold;
 }
 
 .texto-title {
@@ -69,6 +68,7 @@ body {
 
 /* Contenedor del formulario */
 .form {
+    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,12 +196,6 @@ body {
     .form-contacto {
         flex-direction: column;
         height: 100%;
-        padding-top: 12%;
-        padding-bottom: 18%;
-    }
-
-    .texto {
-        margin-left: 0;
     }
 
     .form_container {
@@ -242,7 +236,7 @@ body {
     }
 
     .form__input_lugar {
-        width: 90%;
+        width: 89%;
         font-size: 30px;
     }
 
@@ -306,19 +300,9 @@ body {
 }
 
 @media (max-width:430px) {
-    .form-contacto {
-        padding-top: 20%;
-        padding-bottom: 40%;
-        margin-inline: 2%;
-    }
-
-    .texto {
-        margin-left: 0;
-    }
-
     .form_container {
         padding: 20px;
-        max-width: 100%;
+        width: 75%;
     }
 
     .form_title {
@@ -364,6 +348,10 @@ body {
         padding: 10px 16px;
     }
 
+    .texto {
+        width: 80%;
+    }
+
     .texto h2 {
         font-size: 32px;
         padding: 8px 15px;
@@ -380,13 +368,9 @@ body {
 }
 
 @media (max-width:375px) {
-    .form-contacto {
-        padding-top: 25%;
-        padding-bottom: 50%;
-    }
-
-    .texto {
-        margin-left: 0;
+    .form_container {
+        padding: 20px;
+        width: 70%;
     }
 
     .form_title {
@@ -448,13 +432,9 @@ body {
 }
 
 @media (max-width:320px) {
-    .form-contacto {
-        padding-top: 30%;
-        padding-bottom: 50%;
-    }
-
-    .texto {
-        margin-left: 0;
+    .form_container {
+        padding: 20px;
+        width: 45%;
     }
 
     .form_title {
@@ -497,6 +477,10 @@ body {
     .form__cta {
         font-size: 18px;
         padding: 8px 14px;
+    }
+
+    .texto {
+        width: 53%;
     }
 
     .texto h2 {
