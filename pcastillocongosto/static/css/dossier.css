@@ -1,6 +1,6 @@
 /* Fondo elegante */
 body {
-    background: #f3e5f5;
+    background: #d1c4e9;
     min-height: 100vh;
     height: 100%;
     margin: 0;
@@ -16,7 +16,7 @@ body {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
